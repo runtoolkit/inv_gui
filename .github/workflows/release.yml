@@ -12,16 +12,16 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Kaynak kodu çek
+      - name: Extract the source code.
         uses: actions/checkout@v6
 
-      - name: Datapack zip oluştur
+      - name: Create datapack zip
         run: |
           zip -r inv_gui-${{ github.ref_name }}.zip \
             data/ pack.mcmeta README.md CHANGELOG.md docs/ \
             -x "*.git*"
 
-      - name: GitHub Release oluştur
+      - name: Create a GitHub Release
         uses: softprops/action-gh-release@v3
         if: github.ref_type == 'tag'
         with:

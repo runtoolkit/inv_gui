@@ -1,6 +1,8 @@
 {
     "pack": {
         "pack_format": 26,
-        "description": "inv_gui | Envanter GUI Kütüphanesi v1.0.0 | runtoolkit"
+        "description": "inv_gui | Envanter GUI Kütüphanesi v1.0.0 | runtoolkit",
+        "id": "inv_gui",
+        "type": "datapack"
     }
 }

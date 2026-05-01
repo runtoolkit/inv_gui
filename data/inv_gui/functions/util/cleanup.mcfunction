@@ -1,7 +1,7 @@
-#> inv_gui:util/cleanup
+#> inv_gui:datautil/cleanup
 #
-# 戻り値が含まれるストレージをSıfırlama / başlatma.します
+# Resets the storage containing return values.
 #
-# @within * inv_gui:**
+# @within * inv_gui:data**
 
-data remove storage inv_gui:util out
+data remove storage inv_gui:datautil out

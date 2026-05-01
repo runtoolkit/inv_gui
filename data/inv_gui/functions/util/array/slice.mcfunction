@@ -1,21 +1,21 @@
-#> inv_gui:util/array/slice
+#> inv_gui:datautil/array/slice
 #
-# 指定した範囲の部分配列を取り出して返します
+# Returns a sub-array for the specified range.
 #
 # @input
-#   storage inv_gui:util in
+#   storage inv_gui:datautil in
 #       array: any[]
-#           対象の配列
+#           Target array
 #       start?: int
-#           取り出しの開始位置 (任意)
+#           Start index (optional)
 #       end?: int
-#           取り出しの終了位置 (任意)
+#           End index (optional)
 #
 # @output
-#   storage inv_gui:util out
+#   storage inv_gui:datautil out
 #       array: any[]
-#           取り出された配列
+#           Extracted array
 #
-# @within * inv_gui:**
+# @within * inv_gui:data**
 
-function inv_gui:util/array/core/slice/_
+function inv_gui:datautil/array/core/slice/_

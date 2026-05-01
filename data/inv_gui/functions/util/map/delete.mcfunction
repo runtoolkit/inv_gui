@@ -1,19 +1,19 @@
-#> inv_gui:util/map/delete
+#> inv_gui:datautil/map/delete
 #
-# 指定されたキーに対する要素を削除します
+# Deletes the element for the specified key.
 #
 # @input
-#   storage inv_gui:util in
+#   storage inv_gui:datautil in
 #       key: any
-#           削除する要素のキー
+#           Key of the element to delete
 #       map: Map
-#           対象のMap
+#           Target map
 #
 # @output
-#   storage inv_gui:util out
+#   storage inv_gui:datautil out
 #       map: Map
-#           要素が削除されたMap
+#           Map with element removed
 #
-# @within * inv_gui:**
+# @within * inv_gui:data**
 
-function inv_gui:util/map/core/delete/_
+function inv_gui:datautil/map/core/delete/_

@@ -1,25 +1,25 @@
-#> inv_gui:util/array/core/flat/_
+#> inv_gui:datautil/array/core/flat/_
 #
 # @input
-#   storage inv_gui:util in
+#   storage inv_gui:datautil in
 #       array: any[]
 #
 # @output
-#   storage inv_gui:util out
+#   storage inv_gui:datautil out
 #       array: any[]
 #
-# @within function inv_gui:util/array/flat
+# @within function inv_gui:datautil/array/flat
 
-# 再帰的に平坦化
-    data modify storage inv_gui:util/temp ArrayList append from storage inv_gui:util in.array
-    function inv_gui:util/array/core/flat/loop
+# Flatten recursively
+    data modify storage inv_gui:datautil/temp ArrayList append from storage inv_gui:datautil in.array
+    function inv_gui:datautil/array/core/flat/loop
 
-# 要素の順序を反転
-    data modify storage inv_gui:util in.array set from storage inv_gui:util/temp Flattened
-    function inv_gui:util/array/reverse
+# Reverse element order
+    data modify storage inv_gui:datautil in.array set from storage inv_gui:datautil/temp Flattened
+    function inv_gui:datautil/array/reverse
 
-# Geçici veriyi temizle.
-    data remove storage inv_gui:util/temp ArrayList
-    data remove storage inv_gui:util/temp Flattened
-    data remove storage inv_gui:util/temp isListTag
-    data remove storage inv_gui:util in
+# Clean up temporary data.
+    data remove storage inv_gui:datautil/temp ArrayList
+    data remove storage inv_gui:datautil/temp Flattened
+    data remove storage inv_gui:datautil/temp isListTag
+    data remove storage inv_gui:datautil in

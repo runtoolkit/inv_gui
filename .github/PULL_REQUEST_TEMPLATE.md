@@ -1,27 +1,27 @@
-## Değişiklik Özeti
+## Summary
 
-Bu PR ne yapıyor? Kısaca açıklayın.
+What does this PR do? Briefly describe the change.
 
-## Değişiklik Türü
+## Type of Change
 
-- [ ] 🐛 Hata düzeltmesi (`fix:`)
-- [ ] ✨ Yeni özellik (`feat:`)
-- [ ] 📝 Dokümantasyon (`docs:`)
+- [ ] 🐛 Bug fix (`fix:`)
+- [ ] ✨ New feature (`feat:`)
+- [ ] 📝 Documentation (`docs:`)
 - [ ] ♻️ Refactor (`refactor:`)
-- [ ] ⚡ Performans iyileştirmesi (`perf:`)
-- [ ] 🔧 Diğer (`chore:`)
+- [ ] ⚡ Performance improvement (`perf:`)
+- [ ] 🔧 Other (`chore:`)
 
-## İlgili Issue
+## Related Issue
 
 Closes #
 
-## Test
+## Testing
 
-- [ ] Singleplayer'da test edildi
-- [ ] `/reload` sonrası çalışıyor
-- [ ] Mevcut fonksiyonlar bozulmadı
-- [ ] Yeni fonksiyonlara Türkçe yorum satırı eklendi
+- [ ] Tested in singleplayer
+- [ ] Works after `/reload`
+- [ ] Existing functions are not broken
+- [ ] New functions have English comments
 
-## Notlar
+## Notes
 
-Reviewer için ek bilgi, dikkat edilmesi gereken noktalar.
+Any additional information for the reviewer.

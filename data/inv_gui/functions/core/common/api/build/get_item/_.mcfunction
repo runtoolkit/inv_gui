@@ -1,31 +1,31 @@
-#> inv_gui:core/common/api/build/get_item/_
+#> inv_gui:datacore/common/api/build/get_item/_
 #
-# 指定されたアイテムを保存用シュルカーボックスから取得する
+# Retrieves the specified item from the registry shulker box.
 #
 # @input
-#   storage inv_gui:temp
+#   storage inv_gui:datatemp
 #       TargetSlot: byte
-#           取得するスロット
+#           Slot to retrieve
 #
 # @output
 #   vector 10000 0 10000
 #       container.0
-#           取得したアイテム
+#           Retrieved item
 #
-# @within function inv_gui:core/**
+# @within function inv_gui:datacore/**
 
 #>
-# @within function inv_gui:core/common/api/build/get_item/**
+# @within function inv_gui:datacore/common/api/build/get_item/**
     #declare score_holder $TargetSlot
 
 
-# 保存するスロットの値を取得
-    execute store result score $TargetSlot InvGui run data get storage inv_gui:temp TargetSlot
+# Get values of slot to save to
+    execute store result score $TargetSlot InvGui run data get storage inv_gui:datatemp TargetSlot
 
-# 保存用シュルカーボックスから取得
-    execute positioned 10000 1 10000 run function inv_gui:core/common/api/build/get_item/b-0/0
+# Retrieve from registry shulker box
+    execute positioned 10000 1 10000 run function inv_gui:datacore/common/api/build/get_item/b-0/0
 
 
-# Geçici veriyi temizle.
+# Clean up temporary data.
     scoreboard players reset $TargetSlot InvGui
-    data remove storage inv_gui:temp TargetSlot
+    data remove storage inv_gui:datatemp TargetSlot

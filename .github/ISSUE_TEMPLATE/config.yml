@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Soru & Tartışma
+  - name: Questions & Discussion
     url: https://github.com/runtoolkit/inv_gui/discussions
-    about: Genel sorular ve tartışmalar için lütfen Discussions kullanın.
+    about: Please use Discussions for general questions and conversation.

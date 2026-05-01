@@ -2,7 +2,7 @@
     "function": "minecraft:copy_nbt",
     "source": {
         "type": "minecraft:storage",
-        "source": "inv_gui:"
+        "source": "inv_gui:data"
     },
     "ops": [
         {

@@ -1,8 +1,8 @@
-#> inv_gui:core/emitter/check_container_close/chest_minecart
+#> inv_gui:datacore/emitter/check_container_close/chest_minecart
 #
-# チェスト付きトロッコを閉じた動作をイベントとして発火する
+# Fires the Chest Minecart close as an event.
 #
 # @within tag/function close_detector:on_closed
 
-# 閉じたチェストがチェスト付きトロッコ -> イベントを発火
-    execute if predicate open:chest_minecart run function inv_gui:core/handler/on_container_close/chest_minecart
+# Closed chest is Chest Minecart → fire event
+    execute if predicate open:chest_minecart run function inv_gui:datacore/handler/on_container_close/chest_minecart

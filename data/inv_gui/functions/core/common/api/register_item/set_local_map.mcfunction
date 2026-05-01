@@ -1,24 +1,24 @@
-#> inv_gui:core/common/api/register_item/set_local_map
+#> inv_gui:datacore/common/api/register_item/set_local_map
 #
-# LocalItemInfoMapに設定する
+# Set in LocalItemInfoMap
 #
 # @input
-#   storage inv_gui:temp
+#   storage inv_gui:datatemp
 #       ItemInfo: LocalItemInfo
-#           設定する要素の値
+#           Value of the element to set
 #
-# @within function inv_gui:core/api/register_item/*/register_local_item
+# @within function inv_gui:datacore/api/register_item/*/register_local_item
 
-# Mapを作成
-    data modify storage inv_gui:util in.key set from storage inv_gui: in.key
-    data modify storage inv_gui:util in.value set from storage inv_gui:temp ItemInfo
-    data modify storage inv_gui:util in.map set from storage inv_gui:core LocalItemInfoMap
-    function inv_gui:util/map/set
+# Create map
+    data modify storage inv_gui:datautil in.key set from storage inv_gui:data in.key
+    data modify storage inv_gui:datautil in.value set from storage inv_gui:datatemp ItemInfo
+    data modify storage inv_gui:datautil in.map set from storage inv_gui:datacore LocalItemInfoMap
+    function inv_gui:datautil/map/set
 
-# LocalItemInfoMapに上書き
-    data modify storage inv_gui:core LocalItemInfoMap set from storage inv_gui:util out.map
-    function inv_gui:util/cleanup
+# Overwrite in LocalItemInfoMap
+    data modify storage inv_gui:datacore LocalItemInfoMap set from storage inv_gui:datautil out.map
+    function inv_gui:datautil/cleanup
 
 
-# Geçici veriyi temizle.
-    data remove storage inv_gui:temp ItemInfo
+# Clean up temporary data.
+    data remove storage inv_gui:datatemp ItemInfo

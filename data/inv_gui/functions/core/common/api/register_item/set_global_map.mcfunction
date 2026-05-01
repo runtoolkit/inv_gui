@@ -1,24 +1,24 @@
-#> inv_gui:core/common/api/register_item/set_global_map
+#> inv_gui:datacore/common/api/register_item/set_global_map
 #
-# GlobalItemInfoMapに設定する
+# Set in GlobalItemInfoMap
 #
 # @input
-#   storage inv_gui:temp
+#   storage inv_gui:datatemp
 #       ItemInfo: GlobalItemInfo
-#           設定する要素の値
+#           Value of the element to set
 #
-# @within function inv_gui:core/api/register_item/*/register_global_item
+# @within function inv_gui:datacore/api/register_item/*/register_global_item
 
-# Mapを作成
-    data modify storage inv_gui:util in.key set from storage inv_gui: in.key
-    data modify storage inv_gui:util in.value set from storage inv_gui:temp ItemInfo
-    data modify storage inv_gui:util in.map set from storage inv_gui:core GlobalItemInfoMap
-    function inv_gui:util/map/set
+# Create map
+    data modify storage inv_gui:datautil in.key set from storage inv_gui:data in.key
+    data modify storage inv_gui:datautil in.value set from storage inv_gui:datatemp ItemInfo
+    data modify storage inv_gui:datautil in.map set from storage inv_gui:datacore GlobalItemInfoMap
+    function inv_gui:datautil/map/set
 
-# GlobalItemInfoMapに上書き
-    data modify storage inv_gui:core GlobalItemInfoMap set from storage inv_gui:util out.map
-    function inv_gui:util/cleanup
+# Overwrite in GlobalItemInfoMap
+    data modify storage inv_gui:datacore GlobalItemInfoMap set from storage inv_gui:datautil out.map
+    function inv_gui:datautil/cleanup
 
 
-# Geçici veriyi temizle.
-    data remove storage inv_gui:temp ItemInfo
+# Clean up temporary data.
+    data remove storage inv_gui:datatemp ItemInfo

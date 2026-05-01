@@ -1,19 +1,19 @@
-#> inv_gui:core/api/unregister_item/_
+#> inv_gui:datacore/api/unregister_item/_
 #
 # @input
-#   storage inv_gui: in
+#   storage inv_gui:data in
 #       key: string
 #
-# @within function inv_gui:api/unregister_item
+# @within function inv_gui:dataapi/unregister_item
 
-# Mapから削除
-    data modify storage inv_gui:util in.key set from storage inv_gui: in.key
-    data modify storage inv_gui:util in.map set from storage inv_gui:core GlobalItemInfoMap
-    function inv_gui:util/map/delete
+# Remove from map
+    data modify storage inv_gui:datautil in.key set from storage inv_gui:data in.key
+    data modify storage inv_gui:datautil in.map set from storage inv_gui:datacore GlobalItemInfoMap
+    function inv_gui:datautil/map/delete
 
-# GlobalItemInfoMapに上書き
-    data modify storage inv_gui:core GlobalItemInfoMap set from storage inv_gui:util out.map
-    function inv_gui:util/cleanup
+# Overwrite in GlobalItemInfoMap
+    data modify storage inv_gui:datacore GlobalItemInfoMap set from storage inv_gui:datautil out.map
+    function inv_gui:datautil/cleanup
 
-# Geçici veriyi temizle.
-    data remove storage inv_gui: in
+# Clean up temporary data.
+    data remove storage inv_gui:data in

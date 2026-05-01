@@ -1,17 +1,17 @@
-#> inv_gui:core/common/api/register_item/get_slot_index
+#> inv_gui:datacore/common/api/register_item/get_slot_index
 #
-# アイテムを保存するスロットを取得する
+# Get item at slot to save to
 #
 # @output
-#   storage inv_gui:temp
+#   storage inv_gui:datatemp
 #       Slot: byte
-#           取得したスロット
+#           Retrieved slot
 #
-# @within function inv_gui:core/api/register_item/*/register_local_item
+# @within function inv_gui:datacore/api/register_item/*/register_local_item
 
-# アイテムを保存するスロットを取得
-    execute store result storage inv_gui:temp Slot byte 1.0 run scoreboard players get $LocalItemSlotIndex InvGui
+# Get item at slot to save to
+    execute store result storage inv_gui:datatemp Slot byte 1.0 run scoreboard players get $LocalItemSlotIndex InvGui
 
-# アイテムを保存するスロットを変更
+# Change item at slot to save to
     scoreboard players add $LocalItemSlotIndex InvGui 1
     execute if score $LocalItemSlotIndex InvGui matches 27 run scoreboard players set $LocalItemSlotIndex InvGui 0

@@ -1,17 +1,17 @@
-#> inv_gui:util/array/core/reverse/_
+#> inv_gui:datautil/array/core/reverse/_
 #
 # @input
-#   storage inv_gui:util in
+#   storage inv_gui:datautil in
 #       array: any[]
 #
 # @output
-#   storage inv_gui:util out
+#   storage inv_gui:datautil out
 #       array: any[]
 #
-# @within function inv_gui:util/array/reverse
+# @within function inv_gui:datautil/array/reverse
 
-# 要素の順序を反転
-    function inv_gui:util/array/core/reverse/loop
+# Reverse element order
+    function inv_gui:datautil/array/core/reverse/loop
 
-# Geçici veriyi temizle.
-    data remove storage inv_gui:util in
+# Clean up temporary data.
+    data remove storage inv_gui:datautil in

@@ -1,12 +1,12 @@
-#> inv_gui:core/common/api/build/pre
+#> inv_gui:datacore/common/api/build/pre
 #
-# Build API çalışmadan önce callback bağlamını yedekler.
+# Saves the callback context before the Build API runs.
 #
-# @within function inv_gui:core/api/build/*/_
+# @within function inv_gui:datacore/api/build/*/_
 
-# Callback bağlamındaysa mevcut callback'i geçici depoya yedekle.
-    execute if data storage inv_gui:core {isInCallback:true} run data modify storage inv_gui:temp/build callback set from storage inv_gui: callback
-    execute if data storage inv_gui:core {isInCallback:true} run data remove storage inv_gui: callback
+# If inside callback context, back up current callback to temporary storage.
+    execute if data storage inv_gui:datacore {isInCallback:true} run data modify storage inv_gui:datatemp/build callback set from storage inv_gui:data callback
+    execute if data storage inv_gui:datacore {isInCallback:true} run data remove storage inv_gui:data callback
 
-# on_select içinden çağrıldıysa Build API'nin kullanıldığını işaretle.
-    execute if data storage inv_gui:core {CalledOnSelect:true} run data modify storage inv_gui:core CalledBuildApi set value true
+# If called from on_select, mark that the Build API has been used.
+    execute if data storage inv_gui:datacore {CalledOnSelect:true} run data modify storage inv_gui:datacore CalledBuildApi set value true

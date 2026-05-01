@@ -1,13 +1,13 @@
-#> inv_gui:core/common/api/build/create_menu/set_item/item_type/variable/ender_chest
-# @within function inv_gui:core/common/api/build/create_menu/set_item/item_type/variable/_
+#> inv_gui:datacore/common/api/build/create_menu/set_item/item_type/variable/ender_chest
+# @within function inv_gui:datacore/common/api/build/create_menu/set_item/item_type/variable/_
 
-## InvGui.Player を設定
+## Assign InvGui.Player tag
     tag @s add InvGui.Player
 
 
-# Callback: olayı dinleyiciye ilet.
-    execute at @s run function #inv_gui:set_variable/ender_chest
+# Callback: dispatch event to listener.
+    execute at @s run function #inv_gui:dataset_variable/ender_chest
 
 
-## InvGui.Player を削除
-    function inv_gui:core/common/gui_player/reset
+## Remove InvGui.Player tag
+    function inv_gui:datacore/common/gui_player/reset

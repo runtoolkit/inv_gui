@@ -1,4 +1,4 @@
-#> inv_gui:api/register_item/normal
+#> inv_gui:dataapi/register_item/normal
 #
 # Register the item as normal
 #
@@ -6,7 +6,7 @@
 #   vector 10000 0 10000
 #       container.0
 #           Item to be registered
-#   storage inv_gui: in
+#   storage inv_gui:data in
 #       key: string
 #           Key of the item to be registered
 #       isGlobal?: boolean
@@ -14,4 +14,4 @@
 #
 # @api
 
-function inv_gui:core/api/register_item/normal/_
+function inv_gui:datacore/api/register_item/normal/_

@@ -1,8 +1,8 @@
-#> inv_gui:core/common/gui_target/reset
+#> inv_gui:datacore/common/gui_target/reset
 #
-# InvGui.Target タグを削除する
+# Remove InvGui.Target tag
 #
-# @within function inv_gui:core/**
+# @within function inv_gui:datacore/**
 
-# タグを削除
+# Remove tag
     tag @e[type=minecraft:chest_minecart, tag=InvGui.Target] remove InvGui.Target

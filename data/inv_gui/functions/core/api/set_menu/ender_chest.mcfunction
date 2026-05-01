@@ -1,18 +1,18 @@
-#> inv_gui:core/api/set_menu/ender_chest
-# @within function inv_gui:core/api/set_menu/_
+#> inv_gui:datacore/api/set_menu/ender_chest
+# @within function inv_gui:datacore/api/set_menu/_
 
-## isInCallback bayrağını true olarak işaretle.
-    function inv_gui:core/common/is_in_callback/set
-
-
-# Callback: olayı dinleyiciye ilet.
-    data modify storage inv_gui: callback.id set from storage inv_gui: in.id
-    data remove storage inv_gui: in
-    execute at @s run function #inv_gui:set_menu/ender_chest
-
-# Geçici veriyi temizle.
-    data remove storage inv_gui: callback
+## Set the isInCallback flag.
+    function inv_gui:datacore/common/is_in_callback/set
 
 
-## isInCallback bayrağını temizle.
-    function inv_gui:core/common/is_in_callback/reset
+# Callback: dispatch event to listener.
+    data modify storage inv_gui:data callback.id set from storage inv_gui:data in.id
+    data remove storage inv_gui:data in
+    execute at @s run function #inv_gui:dataset_menu/ender_chest
+
+# Clean up temporary data.
+    data remove storage inv_gui:data callback
+
+
+## Clear the isInCallback flag.
+    function inv_gui:datacore/common/is_in_callback/reset

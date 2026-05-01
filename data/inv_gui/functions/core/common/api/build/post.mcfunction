@@ -1,9 +1,9 @@
-#> inv_gui:core/common/api/build/post
+#> inv_gui:datacore/common/api/build/post
 #
-# Build API çalıştıktan sonra yedeklenen callback bağlamını geri yükler.
+# Restores the backed-up callback context after the Build API runs.
 #
-# @within function inv_gui:core/api/build/*/_
+# @within function inv_gui:datacore/api/build/*/_
 
-# Callback bağlamındaysa yedeklenen callback'i geri yükle.
-    execute if data storage inv_gui:core {isInCallback:true} run data modify storage inv_gui: callback set from storage inv_gui:temp/build callback
-    execute if data storage inv_gui:core {isInCallback:true} run data remove storage inv_gui:temp/build callback
+# If inside callback context, restore the backed-up callback.
+    execute if data storage inv_gui:datacore {isInCallback:true} run data modify storage inv_gui:data callback set from storage inv_gui:datatemp/build callback
+    execute if data storage inv_gui:datacore {isInCallback:true} run data remove storage inv_gui:datatemp/build callback

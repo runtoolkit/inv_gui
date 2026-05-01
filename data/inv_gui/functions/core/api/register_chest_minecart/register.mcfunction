@@ -1,15 +1,15 @@
-#> inv_gui:core/api/register_chest_minecart/register
-# @within function inv_gui:core/api/register_chest_minecart/_
+#> inv_gui:datacore/api/register_chest_minecart/register
+# @within function inv_gui:datacore/api/register_chest_minecart/_
 
 #>
 # @private
     #declare score_holder $TempIndex
 
 
-# 実行者を登録
+# Register executor
     tag @s add InvGui.Entity
 
-# Indexを割り当て
+# Assign Index
     scoreboard players add $MinecartIndex InvGui 1
     execute if score $MinecartIndex InvGui matches 32768 run scoreboard players set $MinecartIndex InvGui 1
     scoreboard players operation $TempIndex InvGui = $MinecartIndex InvGui
@@ -78,9 +78,9 @@
     execute if score $TempIndex InvGui matches 00.. run tag @s add InvGui.Filter.0-0
     execute if score $TempIndex InvGui matches ..-1 run tag @s add InvGui.Filter.0-1
 
-# Idを割り当て
+# Assign Id
     scoreboard players operation @s InvGui.Id = $MinecartIndex InvGui
 
 
-# Geçici veriyi temizle.
+# Clean up temporary data.
     scoreboard players reset $TempIndex InvGui

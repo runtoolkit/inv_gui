@@ -1,14 +1,14 @@
-#> inv_gui:core/common/gui_player/set
+#> inv_gui:datacore/common/gui_player/set
 #
-# 実行者のチェスト付きトロッコを開いているプレイヤーに、 InvGui.Player タグを設定する
+# Assign InvGui.Player tag to the player opening the executor's chest minecart
 #
-# @within function inv_gui:core/**
+# @within function inv_gui:datacore/**
 
 #>
 # @private
     #declare tag InvGui.this
 
-# 開いているチェスト付きトロッコを特定
+# Identify the open chest minecart
     tag @s add InvGui.this
     execute as @a if score @s InvGui.Id = @e[type=minecraft:chest_minecart, tag=InvGui.this, limit=1] InvGui.Id run tag @s add InvGui.Player
     tag @s remove InvGui.this

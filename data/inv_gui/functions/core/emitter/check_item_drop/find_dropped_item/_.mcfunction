@@ -1,16 +1,16 @@
-#> inv_gui:core/emitter/check_item_drop/find_dropped_item/_
-# @within function inv_gui:core/emitter/check_item_drop/_
+#> inv_gui:datacore/emitter/check_item_drop/find_dropped_item/_
+# @within function inv_gui:datacore/emitter/check_item_drop/_
 
-# ドロップされたアイテムのデータを取得
-    data modify storage inv_gui:temp ItemEntity set from entity @s
+# Get data of the dropped item
+    data modify storage inv_gui:datatemp ItemEntity set from entity @s
 
-# ThrowerとUUIDの一致を確認
-    execute store success storage inv_gui:temp Result byte 1.0 run data modify storage inv_gui:temp ItemEntity.Thrower set from entity @a[tag=InvGui.checkItemDrop.this, distance=..5.0, limit=1] UUID
+# Verify Thrower and UUID match
+    execute store success storage inv_gui:datatemp Result byte 1.0 run data modify storage inv_gui:datatemp ItemEntity.Thrower set from entity @a[tag=InvGui.checkItemDrop.this, distance=..5.0, limit=1] UUID
 
-# ThrowerとUUIDが一致 -> ドロップされたアイテムがボタン -> ドロップされたアイテムを発見
-    execute if data storage inv_gui:temp {Result:false} if data storage inv_gui:temp ItemEntity.Item.tag.InvGui{isButton:true} run function inv_gui:core/emitter/check_item_drop/found_dropped_item/item
-    execute if data storage inv_gui:temp {Result:false} if data storage inv_gui:temp ItemEntity.Item.tag.InvGui{isButton:true} as @a[tag=InvGui.checkItemDrop.this, distance=..5.0, limit=1] run function inv_gui:core/emitter/check_item_drop/found_dropped_item/player
+# Thrower and UUID match → dropped item is a button → dropped item found
+    execute if data storage inv_gui:datatemp {Result:false} if data storage inv_gui:datatemp ItemEntity.Item.tag.InvGui{isButton:true} run function inv_gui:datacore/emitter/check_item_drop/found_dropped_item/item
+    execute if data storage inv_gui:datatemp {Result:false} if data storage inv_gui:datatemp ItemEntity.Item.tag.InvGui{isButton:true} as @a[tag=InvGui.checkItemDrop.this, distance=..5.0, limit=1] run function inv_gui:datacore/emitter/check_item_drop/found_dropped_item/player
 
-# Geçici veriyi temizle.
-    data remove storage inv_gui:temp ItemEntity
-    data remove storage inv_gui:temp Result
+# Clean up temporary data.
+    data remove storage inv_gui:datatemp ItemEntity
+    data remove storage inv_gui:datatemp Result

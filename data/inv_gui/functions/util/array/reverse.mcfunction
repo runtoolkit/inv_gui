@@ -1,17 +1,17 @@
-#> inv_gui:util/array/reverse
+#> inv_gui:datautil/array/reverse
 #
-# 要素の順序を反転した配列を返します
+# Returns an array with element order reversed.
 #
 # @input
-#   storage inv_gui:util in
+#   storage inv_gui:datautil in
 #       array: any[]
-#           対象の配列
+#           Target array
 #
 # @output
-#   storage inv_gui:util out
+#   storage inv_gui:datautil out
 #       array: any[]
-#           反転した配列
+#           Reversed array
 #
-# @within * inv_gui:**
+# @within * inv_gui:data**
 
-function inv_gui:util/array/core/reverse/_
+function inv_gui:datautil/array/core/reverse/_

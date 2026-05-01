@@ -1,11 +1,11 @@
-#> inv_gui:core/common/api/build/close_session
+#> inv_gui:datacore/common/api/build/close_session
 #
-# Menü oturumunu kapatır; geçici konteyner yuvalarını ve storage verilerini temizler.
+# Closes the menu session; clears temporary container slots and storage data.
 #
-# @within function inv_gui:core/api/build/*/_
+# @within function inv_gui:datacore/api/build/*/_
 
 # MenuContainer
-## Sıfırlama / başlatma.
+## Reset.
     item replace block 10000 2 10000 container.0 with minecraft:air
     item replace block 10000 2 10000 container.1 with minecraft:air
     item replace block 10000 2 10000 container.2 with minecraft:air
@@ -35,7 +35,7 @@
     item replace block 10000 2 10000 container.26 with minecraft:air
 
 # LocalContainer
-## Sıfırlama / başlatma.
+## Reset.
     item replace block 10000 1 10000 container.0 with minecraft:air
     item replace block 10000 1 10000 container.1 with minecraft:air
     item replace block 10000 1 10000 container.2 with minecraft:air
@@ -64,8 +64,8 @@
     item replace block 10000 1 10000 container.25 with minecraft:air
     item replace block 10000 1 10000 container.26 with minecraft:air
 
-## SlotIndexをSıfırlama / başlatma.
+## Reset SlotIndex.
     scoreboard players set $LocalItemSlotIndex InvGui 0
 
-## ItemInfoMapを削除
-    data remove storage inv_gui:core LocalItemInfoMap
+## Remove ItemInfoMap
+    data remove storage inv_gui:datacore LocalItemInfoMap

@@ -1,17 +1,17 @@
-#> inv_gui:util/array/flat
+#> inv_gui:datautil/array/flat
 #
-# 再帰的に平坦化した配列を返します
+# Returns a recursively flattened array.
 #
 # @input
-#   storage inv_gui:util in
+#   storage inv_gui:datautil in
 #       array: any[]
-#           対象の配列
+#           Target array
 #
 # @output
-#   storage inv_gui:util out
+#   storage inv_gui:datautil out
 #       array: any[]
-#           平坦化した配列
+#           Flattened array
 #
-# @within * inv_gui:**
+# @within * inv_gui:data**
 
-function inv_gui:util/array/core/flat/_
+function inv_gui:datautil/array/core/flat/_

@@ -1,31 +1,31 @@
 # inv_gui
 
-**inv_gui**, Minecraft Java Edition için envanter tabanlı GUI menülerini kolayca oluşturmanızı sağlayan bir mcfunction kütüphanesidir. [Sketch](https://github.com/rarula/Sketch) projesinin tam yeniden adlandırılmış ve yeniden yapılandırılmış çatalıdır.
+**inv_gui** is a Minecraft Java Edition datapack library for building inventory-based GUI menus. It is a fully renamed and restructured fork of [Sketch](https://github.com/rarula/Sketch).
 
-> Geliştirici: [runtoolkit](https://github.com/runtoolkit)  
-> Sürüm: **1.0.0**  
+> Maintainer: [runtoolkit](https://github.com/runtoolkit)  
+> Version: **1.0.0**  
 > Minecraft: **1.20.2 – 1.20.4** (`pack_format 26`)  
-> Lisans: CC0-1.0  
-> Not: **1.21 desteği sonraki commit'lerde overlay sistemi ile eklenecektir.**
+> License: CC0-1.0  
+> Note: **1.21+ support will be added via overlay system in future commits.**
 
 ---
 
-## Özellikler
+## Features
 
-- Chest Minecart veya Ender Chest üzerinde 27 yuvalık menü oluşturma
-- Buton, normal öğe ve değişken öğe türleri
-- Tıklama & bırakma olayı algılama
-- Callback sistemi (listener tabanlı)
-- `set_menu` ile çalışan menüyü anında değiştirme
-- `util/map` ve `util/array` yardımcı modülleri
+- 27-slot GUI menus using Chest Minecart or Ender Chest
+- Button, normal item, and variable item types
+- Click & drop event detection
+- Callback system (listener-based)
+- Swap active menu mid-session with `set_menu`
+- `util/map` and `util/array` helper modules
 
 ---
 
-## Bağımlılıklar
+## Dependencies
 
-Bu datapack'in çalışması için şunlar da yüklenmiş olmalıdır:
+The following datapacks must be loaded alongside inv_gui:data
 
-| Datapack | Lisans | Bağlantı |
+| Datapack | License | Link |
 |---|---|---|
 | Oh! My Dat! | MIT | [Ai-Akaishi/OhMyDat](https://github.com/Ai-Akaishi/OhMyDat) |
 | Close Detector | MIT | [Ai-Akaishi/CloseDetector](https://github.com/Ai-Akaishi/CloseDetector) |
@@ -33,67 +33,70 @@ Bu datapack'in çalışması için şunlar da yüklenmiş olmalıdır:
 
 ---
 
-## Kurulum
+## Installation
 
 ```mcfunction
-function inv_gui:api/setup
+execute in minecraft:overworld run function inv_gui:dataapi/setup
 ```
 
-Detaylı kurulum için: [docs/kurulum.md](docs/kurulum.md)
+> Run once per dimension. See [docs/installation.md](docs/installation.md) for details.
 
 ---
 
-## Hızlı Başlangıç
+## Quick Start
 
 ```mcfunction
+# Register a filler button (key "f")
 item replace block 10000 0 10000 container.0 with minecraft:gray_stained_glass_pane
-data modify storage inv_gui: in.key set value "f"
-function inv_gui:api/register_item/button
+data modify storage inv_gui:data in.key set value "f"
+function inv_gui:dataapi/register_item/button
 
+# Register a clickable gold block (key "G", listener "give_gold")
 item replace block 10000 0 10000 container.0 with minecraft:gold_block
-data modify storage inv_gui: in.key set value "G"
-data modify storage inv_gui: in.listener set value "altin_ver"
-function inv_gui:api/register_item/button
+data modify storage inv_gui:data in.key set value "G"
+data modify storage inv_gui:data in.listener set value "give_gold"
+function inv_gui:dataapi/register_item/button
 
-data modify storage inv_gui: in.contents append value [f, f, f, f, f, f, f, f, f]
-data modify storage inv_gui: in.contents append value [f, -, -, -, G, -, -, -, f]
-data modify storage inv_gui: in.contents append value [f, f, f, f, f, f, f, f, f]
+# Define the menu layout (3 rows x 9 columns)
+data modify storage inv_gui:data in.contents append value [f, f, f, f, f, f, f, f, f]
+data modify storage inv_gui:data in.contents append value [f, -, -, -, G, -, -, -, f]
+data modify storage inv_gui:data in.contents append value [f, f, f, f, f, f, f, f, f]
 
-data modify storage inv_gui: in.id set value "ana_menu"
-function inv_gui:api/build/auto
+data modify storage inv_gui:data in.id set value "main_menu"
+function inv_gui:dataapi/build/auto
 ```
 
-Tüm API belgesi için: [docs/api.md](docs/api.md)
+Full API reference: [docs/api.md](docs/api.md)
 
 ---
 
-## Storage Yapısı
+## Storage Structure
 
 ```
-inv_gui:          Ana giriş/çıkış deposu
-  in.key          Kaydedilecek öğenin anahtarı
-  in.listener     Tıklama listener adı  
-  in.contents     Menü düzeni (3 satır x 9 sütun)
-  in.id           Menü kimliği
-  callback.*      Tıklama sonrası geri dönüş verisi
+inv_gui:data      Main input/output storage (API parameters)
+  in.key          Short key of the item to register
+  in.listener     Click listener name
+  in.contents     Menu layout (3 rows × 9 columns)
+  in.id           Menu identifier
+  callback.*      Return data after a click event
 
-inv_gui:core      Dahili kalıcı veri
-inv_gui:temp      Geçici işlem verisi
-inv_gui:util      Yardımcı modül verisi
+inv_gui:datacore      Internal persistent data (CurrentMenuType etc.)
+inv_gui:datatemp      Temporary operation data
+inv_gui:datautil      Helper module data
 ```
 
 ---
 
-## Scoreboard'lar
+## Scoreboards
 
-| Objective | Tür | Açıklama |
+| Objective | Type | Description |
 |---|---|---|
-| `InvGui` | dummy | Genel durum skoru |
-| `InvGui.Id` | dummy | Minecart menü kimliği |
-| `InvGui.Drop` | dummy | Bırakma tespiti |
+| `InvGui` | dummy | General state score |
+| `InvGui.Id` | dummy | Minecart menu ID index |
+| `InvGui.Drop` | minecraft.used:carrot_on_a_stick | Drop detection |
 
 ---
 
-## Sürüm Geçmişi
+## Changelog
 
-Bakınız: [CHANGELOG.md](CHANGELOG.md)
+See [CHANGELOG.md](CHANGELOG.md)

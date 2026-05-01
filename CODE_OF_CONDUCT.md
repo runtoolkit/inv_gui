@@ -1,50 +1,41 @@
-# Davranış Kuralları
+# Code of Conduct
 
-## Taahhüdümüz
+## Our Pledge
 
-Açık ve kapsayıcı bir ortam sağlamak amacıyla, katkıda bulunanlar ve bakımcılar olarak;
-yaş, beden ölçüsü, engellilik durumu, etnik köken, cinsiyet kimliği ve ifadesi, deneyim seviyesi,
-milliyet, kişisel görünüm, ırk, din veya cinsel kimliğe bakılmaksızın herkes için tacizden arınmış
-bir proje ve topluluk deneyimi sunmayı taahhüt ediyoruz.
+In the interest of fostering an open and inclusive environment, contributors and maintainers pledge to make participation in this project a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity.
 
-## Standartlarımız
+## Our Standards
 
-Olumlu bir ortam yaratmaya katkıda bulunan davranışlar:
+Examples of behavior that contributes to a positive environment:
 
-- Kapsayıcı ve hoşgörülü bir dil kullanmak
-- Farklı görüş ve deneyimlere saygı duymak
-- Yapıcı eleştirileri nezaketle kabul etmek
-- Topluluk için en iyisine odaklanmak
-- Diğer topluluk üyelerine empatiyle yaklaşmak
+- Using welcoming and inclusive language
+- Being respectful of differing viewpoints and experiences
+- Gracefully accepting constructive criticism
+- Focusing on what is best for the community
+- Showing empathy towards other community members
 
-Kabul edilemez davranışlar:
+Examples of unacceptable behavior:
 
-- Cinselleştirilmiş dil veya görseller kullanmak
-- Trolleme, hakaret veya kişisel/siyasi saldırılar
-- Kamuoyu önünde veya özel olarak taciz
-- Başkalarının fiziksel veya elektronik adreslerini izinsiz yayınlamak
-- Profesyonel ortamda uygunsuz sayılabilecek diğer davranışlar
+- Sexualized language or imagery
+- Trolling, insulting or derogatory comments, and personal or political attacks
+- Public or private harassment
+- Publishing others' private information without explicit permission
+- Other conduct which could reasonably be considered inappropriate in a professional setting
 
-## Sorumluluklarımız
+## Our Responsibilities
 
-Proje bakımcıları, kabul edilebilir davranış standartlarını açıklamaktan sorumludur
-ve kabul edilemez davranışlara karşı uygun düzeltici önlemler almak zorundadır.
+Project maintainers are responsible for clarifying the standards of acceptable behavior and are expected to take appropriate corrective action in response to any instances of unacceptable behavior.
 
-Proje bakımcıları, bu Davranış Kuralları ile uyumsuz yorumları, commitleri, kodu, wiki düzenlemelerini,
-issue'ları ve diğer katkıları kaldırma, düzenleme veya reddetme hakkına ve sorumluluğuna sahiptir.
+Project maintainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned with this Code of Conduct.
 
-## Kapsam
+## Scope
 
-Bu Davranış Kuralları hem proje alanlarında hem de bir bireyin projeyi veya topluluğunu
-temsil ettiği kamusal alanlarda geçerlidir.
+This Code of Conduct applies both within project spaces and in public spaces when an individual is representing the project or its community.
 
-## Uygulama
+## Enforcement
 
-Kötüye kullanım, taciz veya kabul edilemez davranış örnekleri GitHub Issues üzerinden
-proje ekibiyle iletişime geçilerek bildirilebilir. Tüm şikayetler incelenerek araştırılacak
-ve duruma uygun bir yanıt verilecektir. Proje ekibi, olayı bildiren kişiyle ilgili gizliliği
-korumakla yükümlüdür.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by opening a GitHub issue or contacting the project team. All complaints will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to the circumstances. The project team is obligated to maintain confidentiality with regard to the reporter of an incident.
 
-## Atıf
+## Attribution
 
-Bu Davranış Kuralları, [Contributor Covenant](https://www.contributor-covenant.org) v1.4 sürümünden uyarlanmıştır.
+This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org), version 1.4.

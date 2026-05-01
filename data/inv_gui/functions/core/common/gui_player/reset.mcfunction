@@ -1,8 +1,8 @@
-#> inv_gui:core/common/gui_player/reset
+#> inv_gui:datacore/common/gui_player/reset
 #
-# InvGui.Player タグを削除する
+# Remove InvGui.Player tag
 #
-# @within function inv_gui:core/**
+# @within function inv_gui:datacore/**
 
-# タグを削除
+# Remove tag
     tag @a[tag=InvGui.Player] remove InvGui.Player

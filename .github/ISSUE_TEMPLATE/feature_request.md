@@ -1,29 +1,28 @@
 ---
-name: Özellik İsteği
-about: inv_gui için yeni bir özellik veya iyileştirme önerin
+name: Feature Request
+about: Suggest a new feature or improvement for inv_gui
 title: '[FEAT] '
 labels: enhancement
 assignees: ''
 ---
 
-## Hangi Sorunu Çözüyor?
+## Problem
 
-Bu özellik isteği hangi problemi ele alıyor? Örn: "Menüden çıkışı algılamak için bir API yok, bu yüzden..."
+What problem does this feature request address? e.g. "There is no API to detect menu exit, so..."
 
-## Önerilen Çözüm
+## Proposed Solution
 
-Nasıl çalışmasını istiyorsunuz? API kullanımını örnekle açıklayın:
+How should it work? Describe with an API usage example:
 
 ```mcfunction
-# Örnek kullanım
-data modify storage inv_gui: in.xxx set value "..."
-function inv_gui:api/...
+data modify storage inv_gui:data in.xxx set value "..."
+function inv_gui:dataapi/...
 ```
 
-## Alternatifler
+## Alternatives
 
-Başka çözümler veya mevcut geçici çözümler (workaround) var mı?
+Are there other solutions or existing workarounds?
 
-## Ek Bağlam
+## Additional Context
 
-Konuyla ilgili referans, link veya ek bilgi ekleyin.
+Add any references, links, or extra information.

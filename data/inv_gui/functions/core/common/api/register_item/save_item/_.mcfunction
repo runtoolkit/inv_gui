@@ -1,30 +1,30 @@
-#> inv_gui:core/common/api/register_item/save_item/_
+#> inv_gui:datacore/common/api/register_item/save_item/_
 #
-# 指定されたアイテムを保存用シュルカーボックスに保存する
+# Save the specified item to the registry shulker box.
 #
 # @input
 #   vector 10000 0 10000
 #       container.0
-#           保存するアイテム
-#   storage inv_gui:temp
+#           Item to save
+#   storage inv_gui:datatemp
 #       TargetSlot: byte
-#           保存するスロット
+#           Slot to save to
 #
-# @within function inv_gui:core/**
+# @within function inv_gui:datacore/**
 
 #>
-# @within function inv_gui:core/common/api/register_item/save_item/**
+# @within function inv_gui:datacore/common/api/register_item/save_item/**
     #declare score_holder $TargetSlot
 
 
-# 保存するスロットの値を取得
-    execute store result score $TargetSlot InvGui run data get storage inv_gui:temp TargetSlot
+# Get values of slot to save to
+    execute store result score $TargetSlot InvGui run data get storage inv_gui:datatemp TargetSlot
 
-# 保存用シュルカーボックスに保存
-    execute positioned 10000 1 10000 run function inv_gui:core/common/api/register_item/save_item/b-0/0
+# Save to registry shulker box
+    execute positioned 10000 1 10000 run function inv_gui:datacore/common/api/register_item/save_item/b-0/0
 
 
-# Geçici veriyi temizle.
+# Clean up temporary data.
     item replace block 10000 0 10000 container.0 with minecraft:air
     scoreboard players reset $TargetSlot InvGui
-    data remove storage inv_gui:temp TargetSlot
+    data remove storage inv_gui:datatemp TargetSlot

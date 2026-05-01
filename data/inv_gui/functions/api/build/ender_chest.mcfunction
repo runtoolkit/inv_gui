@@ -1,9 +1,9 @@
-#> inv_gui:api/build/ender_chest
+#> inv_gui:dataapi/build/ender_chest
 #
 # Create a menu in the executor's ender chest
 #
 # @input
-#   storage inv_gui: in
+#   storage inv_gui:data in
 #       id: any
 #           Identifier of the menu to be created
 #       contents: (string[] @ 9)[] @ 3
@@ -11,4 +11,4 @@
 #
 # @api
 
-function inv_gui:core/api/build/ender_chest/_
+function inv_gui:datacore/api/build/ender_chest/_

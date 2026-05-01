@@ -1,11 +1,11 @@
-#> inv_gui:core/emitter/check_container_open/chest_minecart
+#> inv_gui:datacore/emitter/check_container_open/chest_minecart
 #
-# チェスト付きトロッコを開いた動作をイベントとして発火する
+# Fires the Chest Minecart open as an event.
 #
-# @within advancement inv_gui:on_container_open
+# @within advancement inv_gui:dataon_container_open
 
-# イベントを発火
-    function inv_gui:core/handler/on_container_open/chest_minecart/_
+# Fire event
+    function inv_gui:datacore/handler/on_container_open/chest_minecart/_
 
-# Geçici veriyi temizle.
-    advancement revoke @s only inv_gui:on_container_open
+# Clean up temporary data.
+    advancement revoke @s only inv_gui:dataon_container_open

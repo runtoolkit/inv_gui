@@ -1,21 +1,21 @@
-#> inv_gui:util/map/set
+#> inv_gui:datautil/map/set
 #
-# 指定されたキーと値を持つ要素を追加・更新・作成します
+# Adds, updates, or creates an element with the specified key and value.
 #
 # @input
-#   storage inv_gui:util in
+#   storage inv_gui:datautil in
 #       key: any
-#           設定する要素のキー
+#           Key of the element to set
 #       value: any
-#           設定する要素の値
+#           Value of the element to set
 #       map?: Map
-#           追加・更新する対象のMap (任意)
+#           Target map to add/update (optional)
 #
 # @output
-#   storage inv_gui:util out
+#   storage inv_gui:datautil out
 #       map: Map
-#           設定した要素を含むMap
+#           Map containing the set element
 #
-# @within * inv_gui:**
+# @within * inv_gui:data**
 
-function inv_gui:util/map/core/set/_
+function inv_gui:datautil/map/core/set/_

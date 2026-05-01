@@ -1,14 +1,14 @@
-#> inv_gui:core/emitter/check_item_click/_
+#> inv_gui:datacore/emitter/check_item_click/_
 #
-# Oyuncunun tıkladığı öğeyi tespit eder ve tıklama olayını tetikler.
+# Detects the item the player clicked and fires the click event.
 #
-# @within function inv_gui:core/tick
+# @within function inv_gui:datacore/tick
 
-# アイテムクリックを確認
-    execute store success storage inv_gui:temp isClicked byte 1.0 run clear @s #inv_gui:all{InvGui:{isButton:true}}
+# Check item click
+    execute store success storage inv_gui:datatemp isClicked byte 1.0 run clear @s #inv_gui:dataall{InvGui:{isButton:true}}
 
-# Öğe tıklandıysa tıklama olayını tetikle.
-    execute if data storage inv_gui:temp {isClicked:true} run function inv_gui:core/handler/on_item_click/_
+# If item clicked, fire the click event.
+    execute if data storage inv_gui:datatemp {isClicked:true} run function inv_gui:datacore/handler/on_item_click/_
 
-# Geçici veriyi temizle.
-    data remove storage inv_gui:temp isClicked
+# Clean up temporary data.
+    data remove storage inv_gui:datatemp isClicked

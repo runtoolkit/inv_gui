@@ -356,6 +356,6 @@
         ]
     ],
     "rewards": {
-        "function": "inv_gui:core/emitter/check_container_open/chest_minecart"
+        "function": "inv_gui:datacore/emitter/check_container_open/chest_minecart"
     }
 }

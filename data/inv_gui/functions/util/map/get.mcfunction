@@ -1,21 +1,21 @@
-#> inv_gui:util/map/get
+#> inv_gui:datautil/map/get
 #
-# 指定されたキーから値を返します
+# Returns the value for the specified key.
 #
 # @input
-#   storage inv_gui:util in
+#   storage inv_gui:datautil in
 #       key: any
-#           取得する要素のキー
+#           Key of the element to get
 #       map: Map
-#           対象のMap
+#           Target map
 #
 # @output
-#   storage inv_gui:util out
+#   storage inv_gui:datautil out
 #       value: any
-#           取得した値
+#           Retrieved value
 #       contains: boolean
-#           指定されたキーに対する要素が含まれているかどうか
+#           Whether the element for the specified key exists
 #
-# @within * inv_gui:**
+# @within * inv_gui:data**
 
-function inv_gui:util/map/core/get/_
+function inv_gui:datautil/map/core/get/_

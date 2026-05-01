@@ -1,36 +1,36 @@
 ---
-name: Hata Bildirimi
-about: Bir hata veya beklenmedik davranış bildirin
+name: Bug Report
+about: Report a bug or unexpected behavior
 title: '[BUG] '
 labels: bug
 assignees: ''
 ---
 
-## Hata Açıklaması
+## Description
 
-Hatayı kısaca açıklayın.
+Briefly describe the bug.
 
-## Tekrarlama Adımları
+## Steps to Reproduce
 
-1. '...' fonksiyonunu çalıştırın
-2. '...' komutunu girin
-3. Hatayı gözlemleyin
+1. Run function '...'
+2. Enter command '...'
+3. Observe the bug
 
-## Beklenen Davranış
+## Expected Behavior
 
-Ne olmasını bekliyordunuz?
+What did you expect to happen?
 
-## Gerçekleşen Davranış
+## Actual Behavior
 
-Aslında ne oldu? Varsa hata mesajını ekleyin.
+What happened instead? Include any error messages.
 
-## Ortam Bilgileri
+## Environment
 
-- **inv_gui Sürümü:** (`/data get storage inv_gui: Version` çıktısı)
-- **Minecraft Sürümü:**
-- **Sunucu/İstemci:** (Singleplayer / Multiplayer)
-- **Yüklü Diğer Datapacks:** (`/datapack list` çıktısı)
+- **inv_gui Version:** (output of `/data get storage inv_gui:data Version`)
+- **Minecraft Version:**
+- **Server/Client:** (Singleplayer / Multiplayer)
+- **Other Loaded Datapacks:** (output of `/datapack list`)
 
-## Ek Bilgi
+## Additional Information
 
-Varsa screenshot, log veya ek bağlam ekleyin.
+Add any screenshots, logs, or extra context here.

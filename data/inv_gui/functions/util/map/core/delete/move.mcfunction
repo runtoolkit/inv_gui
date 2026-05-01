@@ -1,15 +1,15 @@
-#> inv_gui:util/map/core/delete/move
+#> inv_gui:datautil/map/core/delete/move
 # @within function
-#   inv_gui:util/map/core/delete/_
-#   inv_gui:util/map/core/delete/move
+#   inv_gui:datautil/map/core/delete/_
+#   inv_gui:datautil/map/core/delete/move
 
-# 配列末尾に含まれるキーが一致するかテスト
-    data modify storage inv_gui:util/temp Key set from storage inv_gui:util out.map[-1].key
-    execute store success storage inv_gui:util/temp Result byte 1.0 run data modify storage inv_gui:util/temp Key set from storage inv_gui:util in.key
+# Test if the key at the end of the array matches
+    data modify storage inv_gui:datautil/temp Key set from storage inv_gui:datautil out.map[-1].key
+    execute store success storage inv_gui:datautil/temp Result byte 1.0 run data modify storage inv_gui:datautil/temp Key set from storage inv_gui:datautil in.key
 
-# キーが不一致 -> 配列末尾の要素を別のデータに移動
-    execute if data storage inv_gui:util/temp {Result:true} run data modify storage inv_gui:util/temp DeletedElements append from storage inv_gui:util out.map[-1]
-    execute if data storage inv_gui:util/temp {Result:true} run data remove storage inv_gui:util out.map[-1]
+# Key does not match → move last array element to separate data
+    execute if data storage inv_gui:datautil/temp {Result:true} run data modify storage inv_gui:datautil/temp DeletedElements append from storage inv_gui:datautil out.map[-1]
+    execute if data storage inv_gui:datautil/temp {Result:true} run data remove storage inv_gui:datautil out.map[-1]
 
-# キーが一致するか、すべての要素を探索するまで再帰
-    execute if data storage inv_gui:util/temp {Result:true} if data storage inv_gui:util out.map[-1] run function inv_gui:util/map/core/delete/move
+# Recurse until key matches or all elements are searched
+    execute if data storage inv_gui:datautil/temp {Result:true} if data storage inv_gui:datautil out.map[-1] run function inv_gui:datautil/map/core/delete/move

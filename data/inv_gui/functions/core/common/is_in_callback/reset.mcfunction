@@ -1,7 +1,7 @@
-#> inv_gui:core/common/is_in_callback/reset
+#> inv_gui:datacore/common/is_in_callback/reset
 #
-# isInCallback bayrağını temizle.する
+# Clear the isInCallback flag.
 #
-# @within function inv_gui:core/**
+# @within function inv_gui:datacore/**
 
-data remove storage inv_gui:core isInCallback
+data remove storage inv_gui:datacore isInCallback

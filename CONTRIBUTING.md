@@ -1,142 +1,138 @@
-# Katkıda Bulunma Rehberi — inv_gui
+# Contributing Guide — inv_gui
 
-Katkıda bulunmak istediğiniz için teşekkürler! Aşağıdaki adımları takip ederek süreci kolaylaştırabilirsiniz.
-
----
-
-## İçindekiler
-
-- [Hata Bildirimi](#hata-bildirimi)
-- [Özellik İsteği](#özellik-isteği)
-- [Kod Katkısı](#kod-katkısı)
-- [Commit Mesajı Kuralları](#commit-mesajı-kuralları)
-- [Stil Rehberi](#stil-rehberi)
+Thank you for your interest in contributing! Follow the steps below to make the process smooth.
 
 ---
 
-## Hata Bildirimi
+## Table of Contents
 
-Bir hata bulduysanız lütfen şunları sağlayın:
-
-1. **inv_gui sürümü** (`/data get storage inv_gui: Version` çıktısı)
-2. **Minecraft sürümü**
-3. **Hatayı tekrarlamak için adımlar**
-4. **Beklenen davranış** — ne olmasını bekliyordunuz?
-5. **Gerçekleşen davranış** — ne oldu?
-6. **`/datapack list` çıktısı** — hangi datapacks yüklü?
-
-[Yeni hata bildirimi oluştur →](.github/ISSUE_TEMPLATE/bug_report.md)
+- [Bug Reports](#bug-reports)
+- [Feature Requests](#feature-requests)
+- [Code Contributions](#code-contributions)
+- [Commit Message Guidelines](#commit-message-guidelines)
+- [Style Guide](#style-guide)
 
 ---
 
-## Özellik İsteği
+## Bug Reports
 
-Yeni bir özellik önermek için önce mevcut issue'ları kontrol edin.
-Benzer bir istek yoksa yeni bir issue açın ve şunları açıklayın:
+If you find a bug, please provide:
 
-- Hangi sorunu çözüyor?
-- Nasıl çalışması gerekiyor?
-- Mevcut API ile nasıl entegre olacak?
+1. **inv_gui version** (output of `/data get storage inv_gui:data Version`)
+2. **Minecraft version**
+3. **Steps to reproduce**
+4. **Expected behavior** — what did you expect to happen?
+5. **Actual behavior** — what happened instead?
+6. **`/datapack list` output** — which datapacks are loaded?
 
 ---
 
-## Kod Katkısı
+## Feature Requests
 
-### 1. Fork ve Clone
+Before opening a feature request, check existing issues for duplicates.
+If none exist, open a new issue and describe:
+
+- What problem does it solve?
+- How should it work?
+- How does it integrate with the existing API?
+
+---
+
+## Code Contributions
+
+### 1. Fork & Clone
 
 ```bash
-git clone https://github.com/KULLANICI_ADINIZ/inv_gui.git
+git clone https://github.com/YOUR_USERNAME/inv_gui.git
 cd inv_gui
 ```
 
-### 2. Branch Oluştur
+### 2. Create a Branch
 
 ```bash
-git checkout -b feat/yeni-ozellik
-# veya
-git checkout -b fix/hata-aciklamasi
+git checkout -b feat/my-feature
+# or
+git checkout -b fix/bug-description
 ```
 
-### 3. Değişiklik Yap
+### 3. Make Changes
 
-- `data/inv_gui/functions/` altındaki `.mcfunction` dosyalarını düzenleyin
-- Her fonksiyona Türkçe yorum satırı ekleyin
-- `declare.mcfunction`'ı güncelleyin (yeni public API varsa)
+- Edit `.mcfunction` files under `data/inv_gui/functions/`
+- Add English comments to every function
+- Update `declare.mcfunction` if you add new public API
 
-### 4. Test Et
-
-Değişikliklerinizi test etmek için:
+### 4. Test
 
 ```mcfunction
 /reload
-/data get storage inv_gui: Version
+/data get storage inv_gui:data Version
 ```
 
-### 5. Pull Request Aç
+### 5. Open a Pull Request
 
-- PR başlığı commit kurallarına uygun olsun
-- Ne değiştirdiğinizi ve neden değiştirdiğinizi açıklayın
-- İlgili issue'u bağlayın (varsa): `Closes #42`
+- Use the commit convention for the PR title
+- Explain what you changed and why
+- Link the related issue if applicable: `Closes #42`
 
 ---
 
-## Commit Mesajı Kuralları
+## Commit Message Guidelines
 
-[Conventional Commits](https://www.conventionalcommits.org/tr/) formatını kullanıyoruz:
+We use [Conventional Commits](https://www.conventionalcommits.org):
 
 ```
-<tür>: <kısa açıklama>
+<type>: <short description>
 
-[opsiyonel gövde]
+[optional body]
 ```
 
-**Türler:**
+**Types:**
 
-| Tür | Açıklama |
+| Type | Description |
 |---|---|
-| `feat` | Yeni özellik |
-| `fix` | Hata düzeltmesi |
-| `docs` | Sadece dokümantasyon |
-| `refactor` | Ne hata düzeltmesi ne de yeni özellik |
-| `perf` | Performans iyileştirmesi |
-| `chore` | Build sistemi, bağımlılık güncellemesi |
+| `feat` | New feature |
+| `fix` | Bug fix |
+| `docs` | Documentation only |
+| `refactor` | Neither a fix nor a feature |
+| `perf` | Performance improvement |
+| `chore` | Build system, dependency update |
 
-**Örnekler:**
+**Examples:**
 
 ```
-feat: on_refresh event tag sistemi eklendi
-fix: chest_minecart set_menu slot offset hatası düzeltildi
-docs: api.md kayıt sistemi bölümü güncellendi
+feat: add on_refresh event tag system
+fix: chest_minecart set_menu slot offset error
+docs: update api.md register section
 ```
 
 ---
 
-## Stil Rehberi
+## Style Guide
 
-### .mcfunction Dosyaları
+### .mcfunction Files
 
 ```mcfunction
-#> inv_gui:modül/fonksiyon
+#> inv_gui:datamodule/function
 #
-# Fonksiyonun ne yaptığını açıklayan Türkçe yorum.
-# Birden fazla satır kullanılabilir.
+# English description of what this function does.
+# Multiple lines are fine.
 #
 # @input
-#   storage inv_gui: in
-#       alan: tür — açıklama
+#   storage inv_gui:data in
+#       field: type — description
 #
-# @within function inv_gui:üst_fonksiyon
+# @within function inv_gui:dataparent_function
 
-# -- Bölüm başlığı --
-    komut satırı
-    komut satırı
+# -- Section heading --
+    command
+    command
 
-# Geçici veriyi temizle.
-    data remove storage inv_gui: in
+# Clean up temporary data.
+    data remove storage inv_gui:data in
 ```
 
-**Kurallar:**
-- 4 boşluklu girinti (tab değil)
-- Her anlamlı blok öncesinde Türkçe yorum
-- `# Geçici veriyi temizle.` kalıbını koruyun
-- Boş satırlarla mantıksal blokları ayırın
+**Rules:**
+- 4-space indentation (no tabs)
+- English comment before every meaningful block
+- Preserve the `# Clean up temporary data.` pattern
+- Separate logical blocks with blank lines

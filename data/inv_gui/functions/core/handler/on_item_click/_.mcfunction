@@ -1,9 +1,9 @@
-#> inv_gui:core/handler/on_item_click/_
+#> inv_gui:datacore/handler/on_item_click/_
 #
-# アイテムクリック時に呼び出される
+# Called when an item is clicked.
 #
-# @within function inv_gui:core/emitter/check_item_click/_
+# @within function inv_gui:datacore/emitter/check_item_click/_
 
-# イベントを発火
-    data modify storage inv_gui:temp SelectionType set value "CLICK"
-    function inv_gui:core/handler/on_select/_
+# Fire event
+    data modify storage inv_gui:datatemp SelectionType set value "CLICK"
+    function inv_gui:datacore/handler/on_select/_

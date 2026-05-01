@@ -1,50 +1,47 @@
-# Güvenlik Politikası — inv_gui
+# Security Policy — inv_gui
 
-## Desteklenen Sürümler
+## Supported Versions
 
-| Sürüm | Destek Durumu |
+| Version | Support Status |
 |---|---|
-| 1.0.x (güncel) | ✅ Güvenlik güncellemeleri alır |
-| < 1.0.0 | ❌ Destek yok |
+| 1.0.x (current) | ✅ Receives security updates |
+| < 1.0.0 | ❌ No support |
 
 ---
 
-## Güvenlik Açığı Bildirimi
+## Reporting a Vulnerability
 
-**Lütfen güvenlik açıklarını kamuya açık issue olarak bildirmeyin.**
+**Do not report security vulnerabilities as public issues.**
 
-Bir güvenlik açığı keşfettiyseniz aşağıdaki yöntemi kullanın:
+If you discover a security vulnerability, use GitHub's **[Private Security Advisories](https://github.com/runtoolkit/inv_gui/security/advisories/new)**.
 
-1. GitHub'ın **[Private Security Advisories](https://github.com/runtoolkit/inv_gui/security/advisories/new)** özelliğini kullanın.
-2. Raporunuzda şunları belirtin:
-   - Açığın türü ve etkisi
-   - Tekrarlamak için adımlar
-   - Hangi inv_gui sürümünü etkiliyor
+Please include:
+- Type and impact of the vulnerability
+- Steps to reproduce
+- Which version(s) of inv_gui are affected
 
-Raporunuzu **72 saat** içinde yanıtlamaya çalışırız.
+We aim to respond within **72 hours**.
 
 ---
 
-## Datapack Güvenliği Hakkında
+## Datapack Security Notes
 
-### Önemli Uyarılar
+### Important Warnings
 
-`inv_gui` bir sunucu tarafı datapack'tir. Aşağıdaki noktalara dikkat edin:
+`inv_gui` is a server-side datapack. Keep the following in mind:
 
-- **`inv_gui:api/setup` yalnızca operatörler tarafından çalıştırılmalıdır.**
-  `forceload` ve `setblock` komutları içerir; oyuncular tarafından erişilebilir hale getirilmemelidir.
+- **`inv_gui:dataapi/setup` should only be run by operators.**
+  It contains `forceload` and `setblock` commands; do not expose it to players.
 
-- **Listener fonksiyonları güven sınırlarını aşmamalıdır.**
-  Callback'ler `@s` bağlamında çalışır. `@a` veya `@e` hedefleyen komutlar eklemeden önce dikkatli olun.
+- **Listener functions must not cross trust boundaries.**
+  Callbacks run in the `@s` context. Be careful before adding commands targeting `@a` or `@e`.
 
-- **Storage verileri sunucu tarafında tutulur.**
-  `inv_gui:` storage'ına güvenilmeyen kaynaklardan veri yazmayın.
+- **Storage data is server-side only.**
+  Do not write untrusted input directly into `inv_gui:data` storage.
 
-- **`Lock:"InvGui"` konteynerleri oyuncular tarafından açılmamalıdır.**
-  `10000 0-2 10000` koordinatlarını oyuncu erişimine kapatın.
+- **`Lock:"InvGui"` containers must not be player-accessible.**
+  Block player access to coordinates `10000 0-2 10000`.
 
-### Mimari Sınırlamalar
+### Architectural Limitations
 
-Intent-tabanlı hata tespiti (yani bir komutun başarısız olup olmadığına bakarak güvenlik kararı vermek)
-datapack mimarisinde güvenilir değildir. `inv_gui`, güvenlik kararlarını konfigürasyon düzeyinde alır;
-çalışma zamanı hata tespitine dayanmaz.
+Intent-based error detection (i.e. making security decisions based on whether a command succeeded or failed) is not reliable in datapack architecture. `inv_gui` makes security decisions at configuration time and does not rely on runtime error detection.

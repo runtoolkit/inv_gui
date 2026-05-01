@@ -1,48 +1,48 @@
-#> inv_gui:core/common/api/build/create_menu/_
+#> inv_gui:datacore/common/api/build/create_menu/_
 #
-# メニューを作成する
+# Create the menu
 #
 # @input
-#   storage inv_gui: in
+#   storage inv_gui:data in
 #       id: any
-#           作成するメニューの識別子
+#           Menu identifier
 #       contents: (string[] @ 9)[] @ 3
-#           作成するメニューの内容
+#           Menu contents to create
 #
 # @output
 #   vector 10000 2 10000
 #       container.0~26
-#           作成されたメニュー
+#           Created menu
 #
-# @within function inv_gui:core/api/build/**
+# @within function inv_gui:datacore/api/build/**
 
 #>
 # @within function
-#   inv_gui:core/common/api/build/**
+#   inv_gui:datacore/common/api/build/**
     #declare score_holder $Slot
 
 
-# contentsを平坦化
-    data modify storage inv_gui:util in.array set from storage inv_gui: in.contents
-    function inv_gui:util/array/flat
+# Flatten contents
+    data modify storage inv_gui:datautil in.array set from storage inv_gui:data in.contents
+    function inv_gui:datautil/array/flat
 
-# contentsを代入
-    data modify storage inv_gui:temp Contents set from storage inv_gui:util out.array
-    function inv_gui:util/cleanup
+# Assign contents
+    data modify storage inv_gui:datatemp Contents set from storage inv_gui:datautil out.array
+    function inv_gui:datautil/cleanup
 
 
-# アイテムの配置を開始するスロットを設定
-    execute store result score $Slot InvGui if data storage inv_gui:temp Contents[]
+# Set the starting slot for item placement
+    execute store result score $Slot InvGui if data storage inv_gui:datatemp Contents[]
     scoreboard players remove $Slot InvGui 1
 
-# アイテムを配置
-    function inv_gui:core/common/api/build/create_menu/loop
+# Place item
+    function inv_gui:datacore/common/api/build/create_menu/loop
 
 
-# Geçici veriyi temizle.
+# Clean up temporary data.
     scoreboard players reset $Slot InvGui
-    data remove storage inv_gui:temp Contents
-    data remove storage inv_gui:temp Content
-    data remove storage inv_gui:temp Slot
-    data remove storage inv_gui:temp ItemInfo
-    data remove storage inv_gui:temp isGlobalItemInfo
+    data remove storage inv_gui:datatemp Contents
+    data remove storage inv_gui:datatemp Content
+    data remove storage inv_gui:datatemp Slot
+    data remove storage inv_gui:datatemp ItemInfo
+    data remove storage inv_gui:datatemp isGlobalItemInfo

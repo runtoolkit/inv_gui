@@ -1,30 +1,30 @@
-#> inv_gui:util/map/core/delete/_
+#> inv_gui:datautil/map/core/delete/_
 #
 # @input
-#   storage inv_gui:util in
+#   storage inv_gui:datautil in
 #       key: any
 #       map: Map
 #
 # @output
-#   storage inv_gui:util out
+#   storage inv_gui:datautil out
 #       map: Map
 #
-# @within function inv_gui:util/map/delete
+# @within function inv_gui:datautil/map/delete
 
-# 対象のMapをコピー
-    data modify storage inv_gui:util out.map set from storage inv_gui:util in.map
+# Copy target map
+    data modify storage inv_gui:datautil out.map set from storage inv_gui:datautil in.map
 
-# 指定されたキーを持つ要素をout.map[-1]に移動
-    function inv_gui:util/map/core/delete/move
+# Move element with specified key to out.map[-1]
+    function inv_gui:datautil/map/core/delete/move
 
-# 要素を削除
-    data remove storage inv_gui:util out.map[-1]
+# Delete element
+    data remove storage inv_gui:datautil out.map[-1]
 
-# 削除した要素を戻す
-    function inv_gui:util/map/core/delete/revert
+# Restore the deleted element
+    function inv_gui:datautil/map/core/delete/revert
 
-# Geçici veriyi temizle.
-    data remove storage inv_gui:util/temp DeletedElements
-    data remove storage inv_gui:util/temp Key
-    data remove storage inv_gui:util/temp Result
-    data remove storage inv_gui:util in
+# Clean up temporary data.
+    data remove storage inv_gui:datautil/temp DeletedElements
+    data remove storage inv_gui:datautil/temp Key
+    data remove storage inv_gui:datautil/temp Result
+    data remove storage inv_gui:datautil in

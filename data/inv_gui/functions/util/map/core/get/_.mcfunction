@@ -1,27 +1,27 @@
-#> inv_gui:util/map/core/get/_
+#> inv_gui:datautil/map/core/get/_
 #
 # @input
-#   storage inv_gui:util in
+#   storage inv_gui:datautil in
 #       map: Map
 #       key: any
 #
 # @output
-#   storage inv_gui:util out
+#   storage inv_gui:datautil out
 #       value: any
 #       contains: boolean
 #
-# @within function inv_gui:util/map/get
+# @within function inv_gui:datautil/map/get
 
-# 戻り値をSıfırlama / başlatma.
-    data modify storage inv_gui:util out.contains set value false
+# Reset return values.
+    data modify storage inv_gui:datautil out.contains set value false
 
-# 指定したキーの要素を探索
-    function inv_gui:util/map/core/get/search
+# Search for element with specified key
+    function inv_gui:datautil/map/core/get/search
 
-# 配列に要素が残っているなら、指定したキーに対する要素が含まれている
-    execute if data storage inv_gui:util in.map[-1] run data modify storage inv_gui:util out.contains set value true
+# If array still has elements, the element for the specified key exists
+    execute if data storage inv_gui:datautil in.map[-1] run data modify storage inv_gui:datautil out.contains set value true
 
-# Geçici veriyi temizle.
-    data remove storage inv_gui:util/temp Key
-    data remove storage inv_gui:util/temp Result
-    data remove storage inv_gui:util in
+# Clean up temporary data.
+    data remove storage inv_gui:datautil/temp Key
+    data remove storage inv_gui:datautil/temp Result
+    data remove storage inv_gui:datautil in

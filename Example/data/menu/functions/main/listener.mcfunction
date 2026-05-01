@@ -4,4 +4,4 @@
 #
 # @within function menu_manager:handler/on_select
 
-execute if data storage inv_gui: callback{listener:"DimensionsMenu"} run function menu:dimensions/
+execute if data storage inv_gui:data callback{listener:"DimensionsMenu"} run function menu:dimensions/

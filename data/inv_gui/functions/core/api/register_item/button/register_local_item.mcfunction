@@ -1,21 +1,21 @@
-#> inv_gui:core/api/register_item/button/register_local_item
-# @within function inv_gui:core/api/register_item/button/_
+#> inv_gui:datacore/api/register_item/button/register_local_item
+# @within function inv_gui:datacore/api/register_item/button/_
 
-# アイテムを保存するスロットを取得
-    function inv_gui:core/common/api/register_item/get_slot_index
+# Get item at slot to save to
+    function inv_gui:datacore/common/api/register_item/get_slot_index
 
-# アイテムを保存
-    data modify storage inv_gui:temp TargetSlot set from storage inv_gui:temp Slot
-    function inv_gui:core/common/api/register_item/save_item/_
-
-
-# LocalItemInfoを構成
-    data modify storage inv_gui:temp ItemInfo.ItemType set from storage inv_gui:temp ItemType
-    data modify storage inv_gui:temp ItemInfo.Slot set from storage inv_gui:temp Slot
-
-# LocalItemInfoMapに設定
-    function inv_gui:core/common/api/register_item/set_local_map
+# Save item
+    data modify storage inv_gui:datatemp TargetSlot set from storage inv_gui:datatemp Slot
+    function inv_gui:datacore/common/api/register_item/save_item/_
 
 
-# Geçici veriyi temizle.
-    data remove storage inv_gui:temp Slot
+# Compose LocalItemInfo
+    data modify storage inv_gui:datatemp ItemInfo.ItemType set from storage inv_gui:datatemp ItemType
+    data modify storage inv_gui:datatemp ItemInfo.Slot set from storage inv_gui:datatemp Slot
+
+# Set in LocalItemInfoMap
+    function inv_gui:datacore/common/api/register_item/set_local_map
+
+
+# Clean up temporary data.
+    data remove storage inv_gui:datatemp Slot

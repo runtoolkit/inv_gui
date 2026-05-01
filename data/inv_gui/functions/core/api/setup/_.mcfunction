@@ -1,24 +1,24 @@
-#> inv_gui:core/api/setup/_
+#> inv_gui:datacore/api/setup/_
 #
-# inv_gui'nin çalışacağı boyutta forceload ve konteyner yapısını kurar.
-# Kurulum yapılmadan menü sistemi çalışmaz.
-# Bu fonksiyonu sunucu başlangıcında veya /reload sonrasında boyut içinde çalıştırın.
+# Prepares the target dimension: sets up forceload and container blocks.
+# The menu system will not function without running this first.
+# Run inside the target dimension using: execute in <dimension> run function inv_gui:dataapi/setup
 #
-# Konteyner koordinatları (forceload bölgesi: 10000 10000):
-#   10000  0  10000 → Giriş/Çıkış konteyneri (API parametreleri için)
-#   10000  1  10000 → Yerel öğe deposu (register işlemleri için)
-#   10000  2  10000 → Menü oluşturma konteyneri (build işlemleri için)
+# Container coordinates (forceload region: 10000 10000):
+#   10000 0 10000 → I/O container (API parameters)
+#   10000 1 10000 → Item registry container
+#   10000 2 10000 → Menu build container
 #
-# @within function inv_gui:api/setup
+# @within function inv_gui:dataapi/setup
 
-# Konteyner bölgesini forceload ile her zaman yüklü tut
+# Keep the container region always loaded via forceload
     forceload add 10000 10000
 
-# Giriş/Çıkış konteynerini yerleştir ve InvGui kilidiyle kilitle
+# Place the I/O container and lock it with the InvGui lock
     setblock 10000 0 10000 minecraft:orange_shulker_box{Lock:"InvGui"}
 
-# Yerel öğe deposu konteynerini yerleştir
+# Place the item registry container
     setblock 10000 1 10000 minecraft:orange_shulker_box{Lock:"InvGui"}
 
-# Menü oluşturma konteynerini yerleştir
+# Place the menu build container
     setblock 10000 2 10000 minecraft:orange_shulker_box{Lock:"InvGui"}

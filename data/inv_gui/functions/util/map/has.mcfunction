@@ -1,19 +1,19 @@
-#> inv_gui:util/map/has
+#> inv_gui:datautil/map/has
 #
-# 指定されたキーに対する要素が含まれているかどうかを返します
+# Returns whether the element for the specified key exists.
 #
 # @input
-#   storage inv_gui:util in
+#   storage inv_gui:datautil in
 #       key: any
-#           テストする要素のキー
+#           Key of the element to test
 #       map: Map
-#           対象のMap
+#           Target map
 #
 # @output
-#   storage inv_gui:util out
+#   storage inv_gui:datautil out
 #       contains: boolean
-#           指定されたキーに対する要素が含まれているかどうか
+#           Whether the element for the specified key exists
 #
-# @within * inv_gui:**
+# @within * inv_gui:data**
 
-function inv_gui:util/map/core/has/_
+function inv_gui:datautil/map/core/has/_

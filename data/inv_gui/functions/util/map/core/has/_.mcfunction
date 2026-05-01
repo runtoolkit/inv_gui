@@ -1,23 +1,23 @@
-#> inv_gui:util/map/core/has/_
+#> inv_gui:datautil/map/core/has/_
 #
 # @input
-#   storage inv_gui:util in
+#   storage inv_gui:datautil in
 #       key: any
 #       map: Map
 #
 # @output
-#   storage inv_gui:util out
+#   storage inv_gui:datautil out
 #       contains: boolean
 #
-# @within function inv_gui:util/map/has
+# @within function inv_gui:datautil/map/has
 
-# 戻り値をSıfırlama / başlatma.
-    data modify storage inv_gui:util out.contains set value false
+# Reset return values.
+    data modify storage inv_gui:datautil out.contains set value false
 
-# 指定したキーに対する要素が含まれているか探索
-    function inv_gui:util/map/core/has/search
+# Search for element with specified key
+    function inv_gui:datautil/map/core/has/search
 
-# Geçici veriyi temizle.
-    data remove storage inv_gui:util/temp Key
-    data remove storage inv_gui:util/temp Result
-    data remove storage inv_gui:util in
+# Clean up temporary data.
+    data remove storage inv_gui:datautil/temp Key
+    data remove storage inv_gui:datautil/temp Result
+    data remove storage inv_gui:datautil in

@@ -3,22 +3,29 @@ name: Release
 on:
   push:
     tags:
-      - "v*"
+      - "v*.*.*"
+
+permissions:
+  contents: write
 
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Kaynak kodu çek
+        uses: actions/checkout@v4
 
       - name: Datapack zip oluştur
         run: |
           zip -r inv_gui-${{ github.ref_name }}.zip \
             data/ pack.mcmeta README.md CHANGELOG.md docs/ \
-            --exclude "*.git*"
+            -x "*.git*"
 
       - name: GitHub Release oluştur
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v3
+        if: github.ref_type == 'tag'
         with:
           files: inv_gui-${{ github.ref_name }}.zip
           body_path: CHANGELOG.md
+          name: inv_gui ${{ github.ref_name }}
+          generate_release_notes: false

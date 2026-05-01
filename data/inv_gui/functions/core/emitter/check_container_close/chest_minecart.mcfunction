@@ -5,4 +5,4 @@
 # @within tag/function close_detector:on_closed
 
 # Closed chest is a chest minecart -> Fire event
-    execute if predicate open:chest_minecart run function inv_gui:core/handler/on_container_close/chest_minecart
+execute if predicate open:chest_minecart run function inv_gui:core/handler/on_container_close/chest_minecart

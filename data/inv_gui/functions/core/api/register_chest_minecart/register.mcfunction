@@ -3,24 +3,24 @@
 
 #>
 # @private
-    #declare score_holder $TempIndex
+#declare score_holder $TempIndex
 
 # Register executor
-    tag @s add Inv GUI.Entity
+tag @s add inv_gui.Entity
 
 # Assign Index (1..32767)
-    scoreboard players add $MinecartIndex Inv GUI 1
-    execute if score $MinecartIndex Inv GUI matches 32768 run scoreboard players set $MinecartIndex Inv GUI 1
+scoreboard players add $MinecartIndex inv_gui 1
+execute if score $MinecartIndex inv_gui matches 32768 run scoreboard players set $MinecartIndex inv_gui 1
 
 # Assign Id
-    scoreboard players operation @s Inv GUI.Id = $MinecartIndex Inv GUI
+scoreboard players operation @s inv_gui.Id = $MinecartIndex inv_gui
 
 # Set each bit of Index as Filter.N-{0|1} tag (macro loop: bit 15→0)
-    scoreboard players operation $TempIndex Inv GUI = $MinecartIndex Inv GUI
-    scoreboard players operation $TempIndex Inv GUI *= $65536 Inv GUI
-    scoreboard players set $_rbit Inv GUI 15
-    function inv_gui:core/api/register_chest_minecart/encode_loop
+scoreboard players operation $TempIndex inv_gui = $MinecartIndex inv_gui
+scoreboard players operation $TempIndex inv_gui *= $65536 inv_gui
+scoreboard players set $_rbit inv_gui 15
+function inv_gui:core/api/register_chest_minecart/encode_loop
 
 # Reset
-    scoreboard players reset $TempIndex Inv GUI
-    scoreboard players reset $_rbit Inv GUI
+scoreboard players reset $TempIndex inv_gui
+scoreboard players reset $_rbit inv_gui

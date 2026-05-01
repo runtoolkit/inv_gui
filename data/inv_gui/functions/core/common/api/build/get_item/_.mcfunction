@@ -15,7 +15,7 @@
 # @within function inv_gui:core/**
 
 # Retrieve from storage shulker box (macro: container slot = TargetSlot)
-    function inv_gui:core/common/api/build/get_item/fetch with storage inv_gui:temp
+function inv_gui:core/common/api/build/get_item/fetch with storage inv_gui:temp
 
 # Reset
-    data remove storage inv_gui:temp TargetSlot
+data remove storage inv_gui:temp TargetSlot

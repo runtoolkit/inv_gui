@@ -10,8 +10,8 @@
 # @within function inv_gui:core/api/register_item/*/register_local_item
 
 # Get slot to save item
-    execute store result storage inv_gui:temp Slot byte 1.0 run scoreboard players get $LocalItemSlotIndex Inv GUI
+execute store result storage inv_gui:temp Slot byte 1.0 run scoreboard players get $LocalItemSlotIndex inv_gui
 
 # Change slot to save item
-    scoreboard players add $LocalItemSlotIndex Inv GUI 1
-    execute if score $LocalItemSlotIndex Inv GUI matches 27 run scoreboard players set $LocalItemSlotIndex Inv GUI 0
+scoreboard players add $LocalItemSlotIndex inv_gui 1
+execute if score $LocalItemSlotIndex inv_gui matches 27 run scoreboard players set $LocalItemSlotIndex inv_gui 0

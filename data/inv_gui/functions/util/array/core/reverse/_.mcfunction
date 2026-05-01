@@ -11,7 +11,7 @@
 # @within function inv_gui:util/array/reverse
 
 # Reverse element order
-    function inv_gui:util/array/core/reverse/loop
+function inv_gui:util/array/core/reverse/loop
 
 # Reset
-    data remove storage inv_gui:util in
+data remove storage inv_gui:util in

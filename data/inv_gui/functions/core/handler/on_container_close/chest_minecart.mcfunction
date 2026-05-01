@@ -5,35 +5,35 @@
 # @within function inv_gui:core/emitter/check_container_close/chest_minecart
 
 ## Set isInCallback
-    function inv_gui:core/common/is_in_callback/set
+function inv_gui:core/common/is_in_callback/set
 
-## Set Inv GUI.Target
-    function inv_gui:core/common/inv_gui_target/set
+## Set inv_gui.Target
+function inv_gui:core/common/inv_gui_target/set
 
 
 # Set callback return value
-    data modify storage inv_gui:temp CurrentContents set from entity @e[type=minecraft:chest_minecart, tag=Inv GUI.Target, limit=1] Items
-    data remove storage inv_gui:temp CurrentContents[{tag:{Inv GUI:{isButton:true}}}]
+data modify storage inv_gui:temp CurrentContents set from entity @e[type=minecraft:chest_minecart, tag=inv_gui.Target, limit=1] Items
+data remove storage inv_gui:temp CurrentContents[{tag:{inv_gui:{isButton:true}}}]
 
 # Callback
-    data modify storage inv_gui:data callback.otherItems set from storage inv_gui:temp CurrentContents
-    function #inv_gui:handler/on_close/chest_minecart
+data modify storage inv_gui:data callback.otherItems set from storage inv_gui:temp CurrentContents
+function #inv_gui:handler/on_close/chest_minecart
 
 # Reset
-    data remove storage inv_gui:data callback
-    data remove storage inv_gui:temp CurrentContents
+data remove storage inv_gui:data callback
+data remove storage inv_gui:temp CurrentContents
 
 
-## Remove Inv GUI.Target
-    function inv_gui:core/common/inv_gui_target/reset
+## Remove inv_gui.Target
+function inv_gui:core/common/inv_gui_target/reset
 
 ## Remove isInCallback
-    function inv_gui:core/common/is_in_callback/reset
+function inv_gui:core/common/is_in_callback/reset
 
 
 # Remove menu info from OhMyDat
-    function #oh_my_dat:please
-    data remove storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].Inv GUI.CurrentMenuType
+function #oh_my_dat:please
+data remove storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].inv_gui.CurrentMenuType
 
-# Remove Inv GUI.Id
-    scoreboard players reset @s Inv GUI.Id
+# Remove inv_gui.Id
+scoreboard players reset @s inv_gui.Id

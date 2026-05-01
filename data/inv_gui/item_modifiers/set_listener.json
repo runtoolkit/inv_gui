@@ -8,7 +8,7 @@
         {
             "op": "replace",
             "source": "in.listener",
-            "target": "Inv GUI.listener"
+            "target": "inv_gui.listener"
         }
     ]
 }

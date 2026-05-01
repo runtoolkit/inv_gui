@@ -6,9 +6,9 @@
 
 #>
 # @within function inv_gui:core/emitter/check_item_drop/**
-    #declare tag Inv GUI.checkItemDrop.this
+#declare tag inv_gui.checkItemDrop.this
 
 # Search for dropped item
-    tag @s add Inv GUI.checkItemDrop.this
-    execute as @e[type=minecraft:item, distance=..5.0] run function inv_gui:core/emitter/check_item_drop/find_dropped_item/_
-    tag @s remove Inv GUI.checkItemDrop.this
+tag @s add inv_gui.checkItemDrop.this
+execute as @e[type=minecraft:item, distance=..5.0] run function inv_gui:core/emitter/check_item_drop/find_dropped_item/_
+tag @s remove inv_gui.checkItemDrop.this

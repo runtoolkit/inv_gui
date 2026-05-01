@@ -5,17 +5,17 @@
 # @within function inv_gui:core/emitter/check_container_open/ender_chest
 
 # Set opened chest type in OhMyDat
-    function #oh_my_dat:please
-    data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].Inv GUI.CurrentMenuType set value "EnderChest"
+function #oh_my_dat:please
+data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].inv_gui.CurrentMenuType set value "EnderChest"
 
 
 ## Set isInCallback
-    function inv_gui:core/common/is_in_callback/set
+function inv_gui:core/common/is_in_callback/set
 
 
 # Callback
-    function #inv_gui:handler/on_open/ender_chest
+function #inv_gui:handler/on_open/ender_chest
 
 
 ## Remove isInCallback
-    function inv_gui:core/common/is_in_callback/reset
+function inv_gui:core/common/is_in_callback/reset

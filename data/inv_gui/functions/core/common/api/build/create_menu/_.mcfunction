@@ -19,30 +19,30 @@
 #>
 # @within function
 #   inv_gui:core/common/api/build/**
-    #declare score_holder $Slot
+#declare score_holder $Slot
 
 
 # Flatten contents
-    data modify storage inv_gui:util in.array set from storage inv_gui:data in.contents
-    function inv_gui:util/array/flat
+data modify storage inv_gui:util in.array set from storage inv_gui:data in.contents
+function inv_gui:util/array/flat
 
 # Assign contents
-    data modify storage inv_gui:temp Contents set from storage inv_gui:util out.array
-    function inv_gui:util/cleanup
+data modify storage inv_gui:temp Contents set from storage inv_gui:util out.array
+function inv_gui:util/cleanup
 
 
 # Set the slot where item placement starts
-    execute store result score $Slot Inv GUI if data storage inv_gui:temp Contents[]
-    scoreboard players remove $Slot Inv GUI 1
+execute store result score $Slot inv_gui if data storage inv_gui:temp Contents[]
+scoreboard players remove $Slot inv_gui 1
 
 # Place item
-    function inv_gui:core/common/api/build/create_menu/loop
+function inv_gui:core/common/api/build/create_menu/loop
 
 
 # Reset
-    scoreboard players reset $Slot Inv GUI
-    data remove storage inv_gui:temp Contents
-    data remove storage inv_gui:temp Content
-    data remove storage inv_gui:temp Slot
-    data remove storage inv_gui:temp ItemInfo
-    data remove storage inv_gui:temp isGlobalItemInfo
+scoreboard players reset $Slot inv_gui
+data remove storage inv_gui:temp Contents
+data remove storage inv_gui:temp Content
+data remove storage inv_gui:temp Slot
+data remove storage inv_gui:temp ItemInfo
+data remove storage inv_gui:temp isGlobalItemInfo

@@ -1,9 +1,9 @@
 #> inv_gui:core/handler/on_container_open/chest_minecart/filter/found
 # @within function inv_gui:core/handler/on_container_open/chest_minecart/filter/0
 
-## Set Inv GUI.Target
-    tag @s add Inv GUI.Target
+## Set inv_gui.Target
+tag @s add inv_gui.Target
 
 
-# Copy own Inv GUI.Id to the player who opened
-    scoreboard players operation @a[tag=Inv GUI.this] Inv GUI.Id = @s Inv GUI.Id
+# Copy own inv_gui.Id to the player who opened
+scoreboard players operation @a[tag=inv_gui.this] inv_gui.Id = @s inv_gui.Id

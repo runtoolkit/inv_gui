@@ -10,6 +10,6 @@
 # @within function inv_gui:core/handler/on_select/menu_type/*/_
 
 # Loop through slots 0..26 to find the changed button
-    scoreboard players set $_gcs Inv GUI 0
-    function inv_gui:core/handler/on_select/get_changed_slot/loop
-    scoreboard players reset $_gcs Inv GUI
+scoreboard players set $_gcs inv_gui 0
+function inv_gui:core/handler/on_select/get_changed_slot/loop
+scoreboard players reset $_gcs inv_gui

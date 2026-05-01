@@ -1,14 +1,14 @@
 #> inv_gui:core/common/inv_gui_target/set
 #
-# Set Inv GUI.Target tag on the chest minecart opened by the executor's player
+# Set inv_gui.Target tag on the chest minecart opened by the executor's player
 #
 # @within function inv_gui:core/**
 
 #>
 # @private
-    #declare tag Inv GUI.this
+#declare tag inv_gui.this
 
 # Identify the opened chest minecart
-    tag @s add Inv GUI.this
-    execute as @e[type=minecraft:chest_minecart, tag=Inv GUI.Entity] if score @s Inv GUI.Id = @a[tag=Inv GUI.this, limit=1] Inv GUI.Id run tag @s add Inv GUI.Target
-    tag @s remove Inv GUI.this
+tag @s add inv_gui.this
+execute as @e[type=minecraft:chest_minecart, tag=inv_gui.Entity] if score @s inv_gui.Id = @a[tag=inv_gui.this, limit=1] inv_gui.Id run tag @s add inv_gui.Target
+tag @s remove inv_gui.this

@@ -5,7 +5,7 @@
 # @within advancement inv_gui:on_container_open
 
 # Fire event
-    function inv_gui:core/handler/on_container_open/chest_minecart/_
+function inv_gui:core/handler/on_container_open/chest_minecart/_
 
 # Reset
-    advancement revoke @s only inv_gui:on_container_open
+advancement revoke @s only inv_gui:on_container_open

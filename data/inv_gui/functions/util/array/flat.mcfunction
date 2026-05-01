@@ -1,6 +1,6 @@
 #> inv_gui:util/array/flat
 #
-# Returns a recursively flattened array.
+# Returns a recursively flattened array
 #
 # @input
 #   storage inv_gui:util in

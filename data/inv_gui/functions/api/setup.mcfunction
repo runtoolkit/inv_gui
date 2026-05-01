@@ -1,6 +1,6 @@
 #> inv_gui:api/setup
 #
-# Set up InvGui to work properly in the dimension of the execution point
+# Set up Inv GUI to work properly in the dimension of the execution point
 #
 # @api
 

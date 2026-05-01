@@ -1,14 +1,16 @@
 #> inv_gui:core/emitter/check_item_click/_
 #
-# Detects the item the player clicked and fires the click event.
+# Fire item click as event
 #
 # @within function inv_gui:core/tick
+#
+# Note: Using @s Inv GUI score instead of storage (per-tick, per-player speedup)
 
-# Check item click
-    execute store success storage inv_gui:datatemp isClicked byte 1.0 run clear @s #inv_gui:dataall{InvGui:{isButton:true}}
+# Check item click (save result to score)
+    execute store success score @s Inv GUI run clear @s #inv_gui:all{Inv GUI:{isButton:true}}
 
-# If item clicked, fire the click event.
-    execute if data storage inv_gui:datatemp {isClicked:true} run function inv_gui:core/handler/on_item_click/_
+# Item is being clicked -> Fire event
+    execute if score @s Inv GUI matches 1 run function inv_gui:core/handler/on_item_click/_
 
-# Clean up temporary data.
-    data remove storage inv_gui:datatemp isClicked
+# Reset
+    scoreboard players reset @s Inv GUI

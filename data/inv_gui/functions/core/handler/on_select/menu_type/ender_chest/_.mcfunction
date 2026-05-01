@@ -3,21 +3,21 @@
 
 # Get menu info
     function #oh_my_dat:please
-    data modify storage inv_gui:datatemp MenuId set from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].InvGui.MenuId
-    data modify storage inv_gui:datatemp Contents set from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].InvGui.Contents
-    data modify storage inv_gui:datatemp CurrentContents set from entity @s EnderItems
+    data modify storage inv_gui:temp MenuId set from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].Inv GUI.MenuId
+    data modify storage inv_gui:temp Contents set from storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].Inv GUI.Contents
+    data modify storage inv_gui:temp CurrentContents set from entity @s EnderItems
 
-# Get item in the changed slot
+# Get item in changed slot
     function inv_gui:core/handler/on_select/get_changed_slot
 
 # Get normal item
-    data remove storage inv_gui:datatemp CurrentContents[{tag:{InvGui:{isButton:true}}}]
+    data remove storage inv_gui:temp CurrentContents[{tag:{Inv GUI:{isButton:true}}}]
 
-# Callback: dispatch event to listener.
+# Callback
     function inv_gui:core/handler/on_select/menu_type/ender_chest/callback
 
-# Clean up temporary data.
-    data remove storage inv_gui:datatemp MenuId
-    data remove storage inv_gui:datatemp Contents
-    data remove storage inv_gui:datatemp CurrentContents
-    data remove storage inv_gui:datatemp Item
+# Reset
+    data remove storage inv_gui:temp MenuId
+    data remove storage inv_gui:temp Contents
+    data remove storage inv_gui:temp CurrentContents
+    data remove storage inv_gui:temp Item

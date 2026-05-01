@@ -1,20 +1,20 @@
 #> inv_gui:util/map/get
 #
-# Returns the value for the specified key.
+# Returns the value for the specified key
 #
 # @input
 #   storage inv_gui:util in
 #       key: any
 #           Key of the element to get
 #       map: Map
-#           Target map
+#           Target Map
 #
 # @output
 #   storage inv_gui:util out
 #       value: any
 #           Retrieved value
 #       contains: boolean
-#           Whether the element for the specified key exists
+#           Whether an element for the specified key is contained
 #
 # @within * inv_gui:**
 

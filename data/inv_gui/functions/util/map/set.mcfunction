@@ -1,6 +1,6 @@
 #> inv_gui:util/map/set
 #
-# Adds, updates, or creates an element with the specified key and value.
+# Adds, updates, or creates an element with the specified key and value
 #
 # @input
 #   storage inv_gui:util in
@@ -9,7 +9,7 @@
 #       value: any
 #           Value of the element to set
 #       map?: Map
-#           Target map to add/update (optional)
+#           Target Map to add/update (optional)
 #
 # @output
 #   storage inv_gui:util out

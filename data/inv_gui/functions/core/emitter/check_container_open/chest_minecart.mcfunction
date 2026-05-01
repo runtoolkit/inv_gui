@@ -1,11 +1,11 @@
 #> inv_gui:core/emitter/check_container_open/chest_minecart
 #
-# Fires the Chest Minecart open as an event.
+# Fire chest minecart opened action as event
 #
-# @within advancement inv_gui:dataon_container_open
+# @within advancement inv_gui:on_container_open
 
 # Fire event
     function inv_gui:core/handler/on_container_open/chest_minecart/_
 
-# Clean up temporary data.
-    advancement revoke @s only inv_gui:dataon_container_open
+# Reset
+    advancement revoke @s only inv_gui:on_container_open

@@ -1,26 +1,26 @@
 #> inv_gui:core/handler/on_select/_
 #
-# Called when a player selects a menu item.
+# Called on selection
 #
 # @input
-#   storage inv_gui:datatemp
+#   storage inv_gui:temp
 #       SelectionType: "CLICK" | "DROP"
-#           Selection type
+#           Type of selection
 #
 # @within function inv_gui:core/handler/*/_
 
-## Set the CalledOnSelect flag.
+## Set CalledOnSelect
     data modify storage inv_gui:core CalledOnSelect set value true
 
 
-# Selects the processing path based on the open container type.
+# Processing for each type of opened chest
     function #oh_my_dat:please
-    execute if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].InvGui{CurrentMenuType:"Minecart"} at @s run function inv_gui:core/handler/on_select/menu_type/chest_minecart/_
-    execute if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].InvGui{CurrentMenuType:"EnderChest"} at @s run function inv_gui:core/handler/on_select/menu_type/ender_chest/_
+    execute if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].Inv GUI{CurrentMenuType:"Minecart"} at @s run function inv_gui:core/handler/on_select/menu_type/chest_minecart/_
+    execute if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].Inv GUI{CurrentMenuType:"EnderChest"} at @s run function inv_gui:core/handler/on_select/menu_type/ender_chest/_
 
-# Clean up temporary data.
-    data remove storage inv_gui:datatemp SelectionType
+# Reset
+    data remove storage inv_gui:temp SelectionType
 
 
-## Clear the CalledOnSelect flag.
+## Remove CalledOnSelect
     data remove storage inv_gui:core CalledOnSelect

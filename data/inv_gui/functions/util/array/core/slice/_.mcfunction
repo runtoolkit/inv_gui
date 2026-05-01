@@ -22,27 +22,27 @@
     #declare score_holder $Index
 
 
-# Reset arguments.
+# Initialize arguments
     execute unless data storage inv_gui:util in.end run data modify storage inv_gui:util in.end set value 2147483647
     execute unless data storage inv_gui:util in.start run data modify storage inv_gui:util in.start set value 0
 
-# Reset return values.
+# Initialize return value
     data modify storage inv_gui:util out.array set value []
 
 
-# Get values
-    execute store result score $End InvGui run data get storage inv_gui:util in.end
-    execute store result score $Start InvGui run data get storage inv_gui:util in.start
+# Get value
+    execute store result score $End Inv GUI run data get storage inv_gui:util in.end
+    execute store result score $Start Inv GUI run data get storage inv_gui:util in.start
 
-# Remove elements from end index onwards
-    execute store result score $Index InvGui if data storage inv_gui:util in.array[]
-    scoreboard players operation $Index InvGui -= $End InvGui
-    execute if score $Index InvGui matches 1.. run function inv_gui:util/array/core/slice/remove
+# Remove elements from end onward
+    execute store result score $Index Inv GUI if data storage inv_gui:util in.array[]
+    scoreboard players operation $Index Inv GUI -= $End Inv GUI
+    execute if score $Index Inv GUI matches 1.. run function inv_gui:util/array/core/slice/remove
 
-# Extract elements from start index onwards
-    execute store result score $Index InvGui if data storage inv_gui:util in.array[]
-    scoreboard players operation $Index InvGui -= $Start InvGui
-    execute if score $Index InvGui matches 1.. run function inv_gui:util/array/core/slice/move
+# Extract elements from start onward
+    execute store result score $Index Inv GUI if data storage inv_gui:util in.array[]
+    scoreboard players operation $Index Inv GUI -= $Start Inv GUI
+    execute if score $Index Inv GUI matches 1.. run function inv_gui:util/array/core/slice/move
 
 
 # Reverse element order
@@ -50,9 +50,9 @@
     function inv_gui:util/array/reverse
 
 
-# Clean up temporary data.
-    scoreboard players reset $End InvGui
-    scoreboard players reset $Start InvGui
-    scoreboard players reset $Index InvGui
+# Reset
+    scoreboard players reset $End Inv GUI
+    scoreboard players reset $Start Inv GUI
+    scoreboard players reset $Index Inv GUI
     data remove storage inv_gui:util/temp Sliced
     data remove storage inv_gui:util in

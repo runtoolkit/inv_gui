@@ -4,8 +4,8 @@
 # Update value for specified key
     data modify storage inv_gui:util/temp TargetElements[-1].value set from storage inv_gui:util in.value
 
-# Restore the deleted element
+# Restore deleted element
     function inv_gui:util/map/core/set/update_map/element/revert
 
-# Return map containing updated element
+# Return Map containing the updated element
     data modify storage inv_gui:util out.map set from storage inv_gui:util/temp TargetElements

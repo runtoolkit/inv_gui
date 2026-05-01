@@ -1,13 +1,13 @@
 #> inv_gui:core/common/api/build/create_menu/_
 #
-# Create the menu
+# Create menu
 #
 # @input
 #   storage inv_gui:data in
 #       id: any
-#           Menu identifier
+#           Identifier of the menu to create
 #       contents: (string[] @ 9)[] @ 3
-#           Menu contents to create
+#           Contents of the menu to create
 #
 # @output
 #   vector 10000 2 10000
@@ -27,22 +27,22 @@
     function inv_gui:util/array/flat
 
 # Assign contents
-    data modify storage inv_gui:datatemp Contents set from storage inv_gui:util out.array
+    data modify storage inv_gui:temp Contents set from storage inv_gui:util out.array
     function inv_gui:util/cleanup
 
 
-# Set the starting slot for item placement
-    execute store result score $Slot InvGui if data storage inv_gui:datatemp Contents[]
-    scoreboard players remove $Slot InvGui 1
+# Set the slot where item placement starts
+    execute store result score $Slot Inv GUI if data storage inv_gui:temp Contents[]
+    scoreboard players remove $Slot Inv GUI 1
 
 # Place item
     function inv_gui:core/common/api/build/create_menu/loop
 
 
-# Clean up temporary data.
-    scoreboard players reset $Slot InvGui
-    data remove storage inv_gui:datatemp Contents
-    data remove storage inv_gui:datatemp Content
-    data remove storage inv_gui:datatemp Slot
-    data remove storage inv_gui:datatemp ItemInfo
-    data remove storage inv_gui:datatemp isGlobalItemInfo
+# Reset
+    scoreboard players reset $Slot Inv GUI
+    data remove storage inv_gui:temp Contents
+    data remove storage inv_gui:temp Content
+    data remove storage inv_gui:temp Slot
+    data remove storage inv_gui:temp ItemInfo
+    data remove storage inv_gui:temp isGlobalItemInfo

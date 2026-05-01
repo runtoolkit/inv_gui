@@ -1,17 +1,17 @@
 #> inv_gui:core/handler/on_select/menu_type/chest_minecart/set_current_menu
 # @within function inv_gui:core/handler/on_select/menu_type/chest_minecart/callback
 
-## Set the isInCallback flag.
+## Set isInCallback
     function inv_gui:core/common/is_in_callback/set
 
 
-# Callback: dispatch event to listener.
-    data modify storage inv_gui:data callback.id set from storage inv_gui:datatemp MenuId
-    function #inv_gui:dataset_menu/chest_minecart
+# Callback
+    data modify storage inv_gui:data callback.id set from storage inv_gui:temp MenuId
+    function #inv_gui:set_menu/chest_minecart
 
-# Clean up temporary data.
+# Reset
     data remove storage inv_gui:data callback
 
 
-## Clear the isInCallback flag.
+## Remove isInCallback
     function inv_gui:core/common/is_in_callback/reset

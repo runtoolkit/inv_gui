@@ -1,14 +1,14 @@
 #> inv_gui:core/emitter/check_item_drop/_
 #
-# Fires the item drop as an event.
+# Fire item drop as event
 #
 # @within function inv_gui:core/tick
 
 #>
 # @within function inv_gui:core/emitter/check_item_drop/**
-    #declare tag InvGui.checkItemDrop.this
+    #declare tag Inv GUI.checkItemDrop.this
 
-# Search for the dropped item
-    tag @s add InvGui.checkItemDrop.this
+# Search for dropped item
+    tag @s add Inv GUI.checkItemDrop.this
     execute as @e[type=minecraft:item, distance=..5.0] run function inv_gui:core/emitter/check_item_drop/find_dropped_item/_
-    tag @s remove InvGui.checkItemDrop.this
+    tag @s remove Inv GUI.checkItemDrop.this

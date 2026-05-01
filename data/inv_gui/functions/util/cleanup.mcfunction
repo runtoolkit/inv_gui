@@ -1,6 +1,6 @@
 #> inv_gui:util/cleanup
 #
-# Resets the storage containing return values.
+# Initializes the storage that contains return values
 #
 # @within * inv_gui:**
 

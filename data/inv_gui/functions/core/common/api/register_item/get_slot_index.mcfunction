@@ -1,17 +1,17 @@
 #> inv_gui:core/common/api/register_item/get_slot_index
 #
-# Get item at slot to save to
+# Get slot to save item
 #
 # @output
-#   storage inv_gui:datatemp
+#   storage inv_gui:temp
 #       Slot: byte
 #           Retrieved slot
 #
 # @within function inv_gui:core/api/register_item/*/register_local_item
 
-# Get item at slot to save to
-    execute store result storage inv_gui:datatemp Slot byte 1.0 run scoreboard players get $LocalItemSlotIndex InvGui
+# Get slot to save item
+    execute store result storage inv_gui:temp Slot byte 1.0 run scoreboard players get $LocalItemSlotIndex Inv GUI
 
-# Change item at slot to save to
-    scoreboard players add $LocalItemSlotIndex InvGui 1
-    execute if score $LocalItemSlotIndex InvGui matches 27 run scoreboard players set $LocalItemSlotIndex InvGui 0
+# Change slot to save item
+    scoreboard players add $LocalItemSlotIndex Inv GUI 1
+    execute if score $LocalItemSlotIndex Inv GUI matches 27 run scoreboard players set $LocalItemSlotIndex Inv GUI 0

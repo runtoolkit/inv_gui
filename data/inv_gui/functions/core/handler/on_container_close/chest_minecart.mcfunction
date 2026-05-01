@@ -1,39 +1,39 @@
 #> inv_gui:core/handler/on_container_close/chest_minecart
 #
-# Called when a Chest Minecart is closed.
+# Called when a chest minecart is closed
 #
 # @within function inv_gui:core/emitter/check_container_close/chest_minecart
 
-## Set the isInCallback flag.
+## Set isInCallback
     function inv_gui:core/common/is_in_callback/set
 
-## Assign InvGui.Target tag
-    function inv_gui:core/common/gui_target/set
+## Set Inv GUI.Target
+    function inv_gui:core/common/inv_gui_target/set
 
 
-# Callback: dispatch event to listener. (return Set value)
-    data modify storage inv_gui:datatemp CurrentContents set from entity @e[type=minecraft:chest_minecart, tag=InvGui.Target, limit=1] Items
-    data remove storage inv_gui:datatemp CurrentContents[{tag:{InvGui:{isButton:true}}}]
+# Set callback return value
+    data modify storage inv_gui:temp CurrentContents set from entity @e[type=minecraft:chest_minecart, tag=Inv GUI.Target, limit=1] Items
+    data remove storage inv_gui:temp CurrentContents[{tag:{Inv GUI:{isButton:true}}}]
 
-# Callback: dispatch event to listener.
-    data modify storage inv_gui:data callback.otherItems set from storage inv_gui:datatemp CurrentContents
-    function #inv_gui:datahandler/on_close/chest_minecart
+# Callback
+    data modify storage inv_gui:data callback.otherItems set from storage inv_gui:temp CurrentContents
+    function #inv_gui:handler/on_close/chest_minecart
 
-# Clean up temporary data.
+# Reset
     data remove storage inv_gui:data callback
-    data remove storage inv_gui:datatemp CurrentContents
+    data remove storage inv_gui:temp CurrentContents
 
 
-## Remove InvGui.Target tag
-    function inv_gui:core/common/gui_target/reset
+## Remove Inv GUI.Target
+    function inv_gui:core/common/inv_gui_target/reset
 
-## Clear the isInCallback flag.
+## Remove isInCallback
     function inv_gui:core/common/is_in_callback/reset
 
 
-# Remove menu info from OhMyDat storage
+# Remove menu info from OhMyDat
     function #oh_my_dat:please
-    data remove storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].InvGui.CurrentMenuType
+    data remove storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].Inv GUI.CurrentMenuType
 
-# Remove InvGui.Id
-    scoreboard players reset @s InvGui.Id
+# Remove Inv GUI.Id
+    scoreboard players reset @s Inv GUI.Id

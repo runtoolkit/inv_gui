@@ -10,12 +10,12 @@
     function inv_gui:core/common/api/set_menu/pre
 
 
-# Selects the processing path based on the open container type.
+# Processing for each type of opened chest
     function #oh_my_dat:please
-    execute if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].InvGui{CurrentMenuType:"Minecart"} run function inv_gui:core/api/set_menu/chest_minecart
-    execute if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].InvGui{CurrentMenuType:"EnderChest"} run function inv_gui:core/api/set_menu/ender_chest
+    execute if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].Inv GUI{CurrentMenuType:"Minecart"} run function inv_gui:core/api/set_menu/chest_minecart
+    execute if data storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].Inv GUI{CurrentMenuType:"EnderChest"} run function inv_gui:core/api/set_menu/ender_chest
 
-# Clean up temporary data.
+# Reset
     data remove storage inv_gui:data in
 
 

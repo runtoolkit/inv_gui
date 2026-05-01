@@ -7,10 +7,10 @@
     data modify storage inv_gui:util/temp Key set from storage inv_gui:util in.map[-1].key
     execute store success storage inv_gui:util/temp Result byte 1.0 run data modify storage inv_gui:util/temp Key set from storage inv_gui:util in.key
 
-# Key matches → return the value of the last array element
+# Key matches -> Return value of last array element
     execute if data storage inv_gui:util/temp {Result:false} run data modify storage inv_gui:util out.value set from storage inv_gui:util in.map[-1].value
 
-# Key does not match → delete last array element
+# Key doesn't match -> Delete last array element
     execute if data storage inv_gui:util/temp {Result:true} run data remove storage inv_gui:util in.map[-1]
 
 # Recurse until key matches or all elements are searched

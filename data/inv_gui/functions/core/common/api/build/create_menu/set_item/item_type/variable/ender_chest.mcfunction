@@ -1,13 +1,13 @@
 #> inv_gui:core/common/api/build/create_menu/set_item/item_type/variable/ender_chest
 # @within function inv_gui:core/common/api/build/create_menu/set_item/item_type/variable/_
 
-## Assign InvGui.Player tag
-    tag @s add InvGui.Player
+## Set Inv GUI.Player
+    tag @s add Inv GUI.Player
 
 
-# Callback: dispatch event to listener.
-    execute at @s run function #inv_gui:dataset_variable/ender_chest
+# Callback
+    execute at @s run function #inv_gui:set_variable/ender_chest
 
 
-## Remove InvGui.Player tag
-    function inv_gui:core/common/gui_player/reset
+## Remove Inv GUI.Player
+    function inv_gui:core/common/inv_gui_player/reset

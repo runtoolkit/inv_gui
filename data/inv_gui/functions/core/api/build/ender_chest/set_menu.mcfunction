@@ -1,6 +1,6 @@
 #> inv_gui:core/api/build/ender_chest/set_menu
 #
-# Set the menu
+# Set menu
 #
 # @input
 #   vector 10000 2 10000
@@ -9,7 +9,7 @@
 #
 # @within function inv_gui:core/api/build/ender_chest/_
 
-# Set the menu
+# Set menu
     item replace entity @s enderchest.0 from block 10000 2 10000 container.0
     item replace entity @s enderchest.1 from block 10000 2 10000 container.1
     item replace entity @s enderchest.2 from block 10000 2 10000 container.2

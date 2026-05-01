@@ -1,6 +1,6 @@
 #> inv_gui:util/array/reverse
 #
-# Returns an array with element order reversed.
+# Returns an array with the element order reversed
 #
 # @input
 #   storage inv_gui:util in

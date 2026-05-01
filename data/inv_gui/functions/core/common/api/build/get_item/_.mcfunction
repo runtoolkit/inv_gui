@@ -1,11 +1,11 @@
 #> inv_gui:core/common/api/build/get_item/_
 #
-# Retrieves the specified item from the registry shulker box.
+# Retrieve specified item from the storage shulker box
 #
 # @input
-#   storage inv_gui:datatemp
+#   storage inv_gui:temp
 #       TargetSlot: byte
-#           Slot to retrieve
+#           Slot to get
 #
 # @output
 #   vector 10000 0 10000
@@ -14,18 +14,8 @@
 #
 # @within function inv_gui:core/**
 
-#>
-# @within function inv_gui:core/common/api/build/get_item/**
-    #declare score_holder $TargetSlot
+# Retrieve from storage shulker box (macro: container slot = TargetSlot)
+    function inv_gui:core/common/api/build/get_item/fetch with storage inv_gui:temp
 
-
-# Get values of slot to save to
-    execute store result score $TargetSlot InvGui run data get storage inv_gui:datatemp TargetSlot
-
-# Retrieve from registry shulker box
-    execute positioned 10000 1 10000 run function inv_gui:core/common/api/build/get_item/b-0/0
-
-
-# Clean up temporary data.
-    scoreboard players reset $TargetSlot InvGui
-    data remove storage inv_gui:datatemp TargetSlot
+# Reset
+    data remove storage inv_gui:temp TargetSlot

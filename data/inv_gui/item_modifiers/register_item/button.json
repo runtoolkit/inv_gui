@@ -1,4 +1,4 @@
 {
     "function": "minecraft:set_nbt",
-    "tag": "{InvGui:{isButton:true}}"
+    "tag": "{Inv GUI:{isButton:true}}"
 }

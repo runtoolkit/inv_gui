@@ -15,16 +15,16 @@
 
 
 # Set item type
-    data modify storage inv_gui:datatemp ItemType set value "Button"
-    item modify block 10000 0 10000 container.0 inv_gui:dataregister_item/button
-    item modify block 10000 0 10000 container.0 inv_gui:dataset_listener
+    data modify storage inv_gui:temp ItemType set value "Button"
+    item modify block 10000 0 10000 container.0 inv_gui:register_item/button
+    item modify block 10000 0 10000 container.0 inv_gui:set_listener
 
-# Add to the respective map
+# Add to each Map
     execute if data storage inv_gui:data in{isGlobal:0b} run function inv_gui:core/api/register_item/button/register_local_item
     execute if data storage inv_gui:data in{isGlobal:1b} run function inv_gui:core/api/register_item/button/register_global_item
 
 
-# Clean up temporary data.
+# Reset
     item replace block 10000 0 10000 container.0 with minecraft:air
-    data remove storage inv_gui:datatemp ItemType
+    data remove storage inv_gui:temp ItemType
     data remove storage inv_gui:data in

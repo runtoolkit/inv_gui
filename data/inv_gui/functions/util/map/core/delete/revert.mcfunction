@@ -3,7 +3,7 @@
 #   inv_gui:util/map/core/delete/_
 #   inv_gui:util/map/core/delete/revert
 
-# Append last array element to end
+# Append last array element to the end
     data modify storage inv_gui:util out.map append from storage inv_gui:util/temp DeletedElements[-1]
     data remove storage inv_gui:util/temp DeletedElements[-1]
 

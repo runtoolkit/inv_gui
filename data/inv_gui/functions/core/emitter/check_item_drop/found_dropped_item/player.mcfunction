@@ -4,5 +4,5 @@
 # Fire event
     function inv_gui:core/handler/on_item_drop/_
 
-# Clean up temporary data.
-    scoreboard players remove @s InvGui.Drop 1
+# Reset
+    scoreboard players remove @s Inv GUI.Drop 1

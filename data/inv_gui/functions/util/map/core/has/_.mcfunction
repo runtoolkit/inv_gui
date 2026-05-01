@@ -11,13 +11,13 @@
 #
 # @within function inv_gui:util/map/has
 
-# Reset return values.
+# Initialize return value
     data modify storage inv_gui:util out.contains set value false
 
-# Search for element with specified key
+# Search whether element for specified key is contained
     function inv_gui:util/map/core/has/search
 
-# Clean up temporary data.
+# Reset
     data remove storage inv_gui:util/temp Key
     data remove storage inv_gui:util/temp Result
     data remove storage inv_gui:util in

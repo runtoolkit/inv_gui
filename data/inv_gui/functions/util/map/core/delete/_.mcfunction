@@ -11,7 +11,7 @@
 #
 # @within function inv_gui:util/map/delete
 
-# Copy target map
+# Copy target Map
     data modify storage inv_gui:util out.map set from storage inv_gui:util in.map
 
 # Move element with specified key to out.map[-1]
@@ -20,10 +20,10 @@
 # Delete element
     data remove storage inv_gui:util out.map[-1]
 
-# Restore the deleted element
+# Restore deleted element
     function inv_gui:util/map/core/delete/revert
 
-# Clean up temporary data.
+# Reset
     data remove storage inv_gui:util/temp DeletedElements
     data remove storage inv_gui:util/temp Key
     data remove storage inv_gui:util/temp Result

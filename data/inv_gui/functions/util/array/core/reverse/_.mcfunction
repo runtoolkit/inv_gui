@@ -13,5 +13,5 @@
 # Reverse element order
     function inv_gui:util/array/core/reverse/loop
 
-# Clean up temporary data.
+# Reset
     data remove storage inv_gui:util in

@@ -1,29 +1,20 @@
 #> inv_gui:core/common/api/build/place_item/_
 #
-# Places the specified item into the build shulker box.
+# Place specified item in the creation shulker box
 #
 # @input
 #   vector 10000 0 10000
 #       container.0
 #           Item to place
-#   storage inv_gui:datatemp
+#   storage inv_gui:temp
 #       TargetSlot: byte
-#           Target slot
+#           Slot to place in
 #
 # @within function inv_gui:core/**
 
-#>
-# @within function inv_gui:core/common/api/build/place_item/**
-    #declare score_holder $TargetSlot
+# Place in creation shulker box (macro: container slot = TargetSlot)
+    function inv_gui:core/common/api/build/place_item/put with storage inv_gui:temp
 
-
-# Get values of slot to save to
-    execute store result score $TargetSlot InvGui run data get storage inv_gui:datatemp TargetSlot
-
-# Place in build shulker box
-    execute positioned 10000 2 10000 run function inv_gui:core/common/api/build/place_item/b-0/0
-
-# Clean up temporary data.
+# Reset
     item replace block 10000 0 10000 container.0 with minecraft:air
-    scoreboard players reset $TargetSlot InvGui
-    data remove storage inv_gui:datatemp TargetSlot
+    data remove storage inv_gui:temp TargetSlot

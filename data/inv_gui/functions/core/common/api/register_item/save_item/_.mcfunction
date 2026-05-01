@@ -1,30 +1,20 @@
 #> inv_gui:core/common/api/register_item/save_item/_
 #
-# Save the specified item to the registry shulker box.
+# Save specified item in the storage shulker box
 #
 # @input
 #   vector 10000 0 10000
 #       container.0
 #           Item to save
-#   storage inv_gui:datatemp
+#   storage inv_gui:temp
 #       TargetSlot: byte
-#           Slot to save to
+#           Slot to save
 #
 # @within function inv_gui:core/**
 
-#>
-# @within function inv_gui:core/common/api/register_item/save_item/**
-    #declare score_holder $TargetSlot
+# Save in storage shulker box (macro: container slot = TargetSlot)
+    function inv_gui:core/common/api/register_item/save_item/place with storage inv_gui:temp
 
-
-# Get values of slot to save to
-    execute store result score $TargetSlot InvGui run data get storage inv_gui:datatemp TargetSlot
-
-# Save to registry shulker box
-    execute positioned 10000 1 10000 run function inv_gui:core/common/api/register_item/save_item/b-0/0
-
-
-# Clean up temporary data.
+# Reset
     item replace block 10000 0 10000 container.0 with minecraft:air
-    scoreboard players reset $TargetSlot InvGui
-    data remove storage inv_gui:datatemp TargetSlot
+    data remove storage inv_gui:temp TargetSlot

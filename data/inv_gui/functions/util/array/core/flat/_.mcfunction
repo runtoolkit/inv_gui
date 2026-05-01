@@ -18,7 +18,7 @@
     data modify storage inv_gui:util in.array set from storage inv_gui:util/temp Flattened
     function inv_gui:util/array/reverse
 
-# Clean up temporary data.
+# Reset
     data remove storage inv_gui:util/temp ArrayList
     data remove storage inv_gui:util/temp Flattened
     data remove storage inv_gui:util/temp isListTag

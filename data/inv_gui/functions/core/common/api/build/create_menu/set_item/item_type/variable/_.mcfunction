@@ -6,36 +6,36 @@
 #
 # @within function inv_gui:core/common/api/build/create_menu/set_item/_
 
-## Back up in storage
-    data modify storage inv_gui:datatemp/build in set from storage inv_gui:data in
+## Backup in
+    data modify storage inv_gui:temp/build in set from storage inv_gui:data in
     data remove storage inv_gui:data in
 
 
-# Callback: dispatch event to listener. (return Set value)
-    data modify storage inv_gui:data callback.id set from storage inv_gui:datatemp/build in.id
-    data modify storage inv_gui:data callback.key set from storage inv_gui:datatemp Content
-    data modify storage inv_gui:data callback.slot set from storage inv_gui:datatemp Slot
+# Set callback return value
+    data modify storage inv_gui:data callback.id set from storage inv_gui:temp/build in.id
+    data modify storage inv_gui:data callback.key set from storage inv_gui:temp Content
+    data modify storage inv_gui:data callback.slot set from storage inv_gui:temp Slot
 
-# Callback: dispatch event to listener.
+# Callback
     execute if entity @s[type=minecraft:chest_minecart] run function inv_gui:core/common/api/build/create_menu/set_item/item_type/variable/chest_minecart
     execute if entity @s[type=minecraft:player] run function inv_gui:core/common/api/build/create_menu/set_item/item_type/variable/ender_chest
 
-# Clean up temporary data.
+# Reset
     data remove storage inv_gui:data callback
 
 
-# Set listener on the retrieved item
-    item modify block 10000 0 10000 container.0 inv_gui:dataset_listener
+# Set listener on retrieved item
+    item modify block 10000 0 10000 container.0 inv_gui:set_listener
 
-# Clean up temporary data.
+# Reset
     data remove storage inv_gui:data in
 
 
-# Place the retrieved item
-    data modify storage inv_gui:datatemp TargetSlot set from storage inv_gui:datatemp Slot
+# Place retrieved item
+    data modify storage inv_gui:temp TargetSlot set from storage inv_gui:temp Slot
     function inv_gui:core/common/api/build/place_item/_
 
 
-## Restore in storage
-    data modify storage inv_gui:data in set from storage inv_gui:datatemp/build in
-    data remove storage inv_gui:datatemp/build in
+## Set in
+    data modify storage inv_gui:data in set from storage inv_gui:temp/build in
+    data remove storage inv_gui:temp/build in

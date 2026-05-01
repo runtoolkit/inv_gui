@@ -1,11 +1,11 @@
 #> inv_gui:core/common/api/build/close_session
 #
-# Closes the menu session; clears temporary container slots and storage data.
+# Close session
 #
 # @within function inv_gui:core/api/build/*/_
 
 # MenuContainer
-## Reset.
+## Initialization
     item replace block 10000 2 10000 container.0 with minecraft:air
     item replace block 10000 2 10000 container.1 with minecraft:air
     item replace block 10000 2 10000 container.2 with minecraft:air
@@ -35,7 +35,7 @@
     item replace block 10000 2 10000 container.26 with minecraft:air
 
 # LocalContainer
-## Reset.
+## Initialization
     item replace block 10000 1 10000 container.0 with minecraft:air
     item replace block 10000 1 10000 container.1 with minecraft:air
     item replace block 10000 1 10000 container.2 with minecraft:air
@@ -64,8 +64,8 @@
     item replace block 10000 1 10000 container.25 with minecraft:air
     item replace block 10000 1 10000 container.26 with minecraft:air
 
-## Reset SlotIndex.
-    scoreboard players set $LocalItemSlotIndex InvGui 0
+## Initialize SlotIndex
+    scoreboard players set $LocalItemSlotIndex Inv GUI 0
 
 ## Remove ItemInfoMap
     data remove storage inv_gui:core LocalItemInfoMap

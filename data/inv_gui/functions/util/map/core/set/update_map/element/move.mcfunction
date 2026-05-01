@@ -7,7 +7,7 @@
     data modify storage inv_gui:util/temp Key set from storage inv_gui:util/temp TargetElements[-1].key
     execute store success storage inv_gui:util/temp Result byte 1.0 run data modify storage inv_gui:util/temp Key set from storage inv_gui:util in.key
 
-# Key does not match → move last array element to separate data
+# Key doesn't match -> Move last array element to another data
     execute if data storage inv_gui:util/temp {Result:true} run data modify storage inv_gui:util/temp DeletedElements append from storage inv_gui:util/temp TargetElements[-1]
     execute if data storage inv_gui:util/temp {Result:true} run data remove storage inv_gui:util/temp TargetElements[-1]
 

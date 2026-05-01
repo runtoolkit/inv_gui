@@ -1,38 +1,15 @@
 #> inv_gui:core/handler/on_select/get_changed_slot
 #
-# Detects the item in the changed slot.
+# Get item in changed slot (macro loop, early exit)
 #
 # @output
-#   storage inv_gui:datatemp
+#   storage inv_gui:temp
 #       Item: Item
 #           Item in the changed slot
 #
 # @within function inv_gui:core/handler/on_select/menu_type/*/_
 
-execute if data storage inv_gui:datatemp Contents[{Slot:0b,  tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:0b,  tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:0b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:1b,  tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:1b,  tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:1b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:2b,  tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:2b,  tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:2b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:3b,  tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:3b,  tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:3b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:4b,  tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:4b,  tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:4b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:5b,  tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:5b,  tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:5b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:6b,  tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:6b,  tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:6b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:7b,  tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:7b,  tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:7b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:8b,  tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:8b,  tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:8b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:9b,  tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:9b,  tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:9b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:10b, tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:10b, tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:10b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:11b, tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:11b, tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:11b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:12b, tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:12b, tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:12b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:13b, tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:13b, tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:13b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:14b, tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:14b, tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:14b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:15b, tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:15b, tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:15b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:16b, tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:16b, tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:16b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:17b, tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:17b, tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:17b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:18b, tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:18b, tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:18b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:19b, tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:19b, tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:19b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:20b, tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:20b, tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:20b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:21b, tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:21b, tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:21b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:22b, tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:22b, tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:22b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:23b, tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:23b, tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:23b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:24b, tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:24b, tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:24b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:25b, tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:25b, tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:25b}]
-execute if data storage inv_gui:datatemp Contents[{Slot:26b, tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:26b, tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:26b}]
+# Loop through slots 0..26 to find the changed button
+    scoreboard players set $_gcs Inv GUI 0
+    function inv_gui:core/handler/on_select/get_changed_slot/loop
+    scoreboard players reset $_gcs Inv GUI

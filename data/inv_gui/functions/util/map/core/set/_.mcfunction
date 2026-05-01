@@ -12,11 +12,11 @@
 #
 # @within function inv_gui:util/map/set
 
-# Target map provided → add/update map
+# Target Map is specified -> Add/update Map
     execute if data storage inv_gui:util in.map run function inv_gui:util/map/core/set/update_map/_
 
-# No target map provided → create new map
+# Target Map not specified -> Create Map
     execute unless data storage inv_gui:util in.map run function inv_gui:util/map/core/set/create_map/_
 
-# Clean up temporary data.
+# Reset
     data remove storage inv_gui:util in

@@ -2,6 +2,6 @@
 #
 # Called when a player opens Minecart with Chest or Ender Chest
 #
-# @within tag/function inv_gui:datahandler/on_open/*
+# @within tag/function inv_gui:handler/on_open/*
 
 function menu:main/

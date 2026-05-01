@@ -1,6 +1,6 @@
 #> inv_gui:core/common/is_in_callback/set
 #
-# Set the isInCallback flag.
+# Set isInCallback
 #
 # @within function inv_gui:core/**
 

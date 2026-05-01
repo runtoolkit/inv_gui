@@ -3,15 +3,15 @@
 # Set in GlobalItemInfoMap
 #
 # @input
-#   storage inv_gui:datatemp
+#   storage inv_gui:temp
 #       ItemInfo: GlobalItemInfo
 #           Value of the element to set
 #
 # @within function inv_gui:core/api/register_item/*/register_global_item
 
-# Create map
+# Create Map
     data modify storage inv_gui:util in.key set from storage inv_gui:data in.key
-    data modify storage inv_gui:util in.value set from storage inv_gui:datatemp ItemInfo
+    data modify storage inv_gui:util in.value set from storage inv_gui:temp ItemInfo
     data modify storage inv_gui:util in.map set from storage inv_gui:core GlobalItemInfoMap
     function inv_gui:util/map/set
 
@@ -20,5 +20,5 @@
     function inv_gui:util/cleanup
 
 
-# Clean up temporary data.
-    data remove storage inv_gui:datatemp ItemInfo
+# Reset
+    data remove storage inv_gui:temp ItemInfo

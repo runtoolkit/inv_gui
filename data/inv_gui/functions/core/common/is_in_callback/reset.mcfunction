@@ -1,6 +1,6 @@
 #> inv_gui:core/common/is_in_callback/reset
 #
-# Clear the isInCallback flag.
+# Remove isInCallback
 #
 # @within function inv_gui:core/**
 

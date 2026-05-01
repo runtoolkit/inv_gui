@@ -14,7 +14,7 @@
 # Register executor
     function inv_gui:api/register_chest_minecart
 
-# Create the menu
+# Create menu
     function inv_gui:core/common/api/build/create_menu/_
 
 
@@ -22,17 +22,17 @@
     function inv_gui:core/common/api/build/post
 
 
-# Write menu info to OhMyDat storage
+# Set menu info in OhMyDat
     function #oh_my_dat:please
-    data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].InvGui.MenuId set from storage inv_gui:data in.id
-    data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].InvGui.Contents set from block 10000 2 10000 Items
+    data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].Inv GUI.MenuId set from storage inv_gui:data in.id
+    data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].Inv GUI.Contents set from block 10000 2 10000 Items
 
-# Set the menu
+# Set menu
     function inv_gui:core/api/build/chest_minecart/set_menu
 
 
-# Closes the menu session; clears temporary container slots and storage data.
+# Close session
     function inv_gui:core/common/api/build/close_session
 
-# Clean up temporary data.
+# Reset
     data remove storage inv_gui:data in

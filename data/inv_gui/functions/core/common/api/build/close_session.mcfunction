@@ -1,8 +1,8 @@
-#> inv_gui:datacore/common/api/build/close_session
+#> inv_gui:core/common/api/build/close_session
 #
 # Closes the menu session; clears temporary container slots and storage data.
 #
-# @within function inv_gui:datacore/api/build/*/_
+# @within function inv_gui:core/api/build/*/_
 
 # MenuContainer
 ## Reset.
@@ -68,4 +68,4 @@
     scoreboard players set $LocalItemSlotIndex InvGui 0
 
 ## Remove ItemInfoMap
-    data remove storage inv_gui:datacore LocalItemInfoMap
+    data remove storage inv_gui:core LocalItemInfoMap

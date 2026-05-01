@@ -1,17 +1,17 @@
-#> inv_gui:datautil/array/reverse
+#> inv_gui:util/array/reverse
 #
 # Returns an array with element order reversed.
 #
 # @input
-#   storage inv_gui:datautil in
+#   storage inv_gui:util in
 #       array: any[]
 #           Target array
 #
 # @output
-#   storage inv_gui:datautil out
+#   storage inv_gui:util out
 #       array: any[]
 #           Reversed array
 #
-# @within * inv_gui:data**
+# @within * inv_gui:**
 
-function inv_gui:datautil/array/core/reverse/_
+function inv_gui:util/array/core/reverse/_

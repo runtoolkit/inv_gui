@@ -1,4 +1,4 @@
-#> inv_gui:dataapi/register_item/variable
+#> inv_gui:api/register_item/variable
 #
 # Register an item as temporary
 #
@@ -11,4 +11,4 @@
 #
 # @api
 
-function inv_gui:datacore/api/register_item/variable/_
+function inv_gui:core/api/register_item/variable/_

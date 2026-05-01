@@ -30,7 +30,7 @@ We aim to respond within **72 hours**.
 
 `inv_gui` is a server-side datapack. Keep the following in mind:
 
-- **`inv_gui:dataapi/setup` should only be run by operators.**
+- **`inv_gui:api/setup` should only be run by operators.**
   It contains `forceload` and `setblock` commands; do not expose it to players.
 
 - **Listener functions must not cross trust boundaries.**

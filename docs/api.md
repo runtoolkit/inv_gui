@@ -9,20 +9,20 @@ inv_gui is built on two main flows:
 
 ---
 
-## `inv_gui:dataapi/setup`
+## `inv_gui:api/setup`
 
 Prepares the dimension: sets up forceload and container blocks.  
 Must be run once per dimension using `execute in`:
 
 ```mcfunction
-execute in minecraft:overworld run function inv_gui:dataapi/setup
-execute in minecraft:the_nether run function inv_gui:dataapi/setup
-execute in minecraft:the_end run function inv_gui:dataapi/setup
+execute in minecraft:overworld run function inv_gui:api/setup
+execute in minecraft:the_nether run function inv_gui:api/setup
+execute in minecraft:the_end run function inv_gui:api/setup
 ```
 
 ---
 
-## `inv_gui:dataapi/register_item/button`
+## `inv_gui:api/register_item/button`
 
 Registers an item as a **clickable button**.
 
@@ -38,25 +38,25 @@ Registers an item as a **clickable button**.
 item replace block 10000 0 10000 container.0 with minecraft:diamond
 data modify storage inv_gui:data in.key set value "D"
 data modify storage inv_gui:data in.listener set value "give_diamond"
-function inv_gui:dataapi/register_item/button
+function inv_gui:api/register_item/button
 ```
 
 ---
 
-## `inv_gui:dataapi/register_item/normal`
+## `inv_gui:api/register_item/normal`
 
 Registers an item as a **passive (non-clickable)** item.  
 Same input format as `button`; `in.listener` is unused.
 
 ---
 
-## `inv_gui:dataapi/register_item/variable`
+## `inv_gui:api/register_item/variable`
 
 Registers a **variable** item slot. The item from the player's inventory is placed in this slot.
 
 ---
 
-## `inv_gui:dataapi/build/auto`
+## `inv_gui:api/build/auto`
 
 Builds the menu into the container the current player has open.  
 Container type (Chest Minecart or Ender Chest) is detected automatically.
@@ -72,7 +72,7 @@ data modify storage inv_gui:data in.contents append value [f, f, f, f, f, f, f, 
 data modify storage inv_gui:data in.contents append value [f, -, -, -, G, -, -, -, f]
 data modify storage inv_gui:data in.contents append value [f, f, f, f, f, f, f, f, f]
 data modify storage inv_gui:data in.id set value "main_menu"
-function inv_gui:dataapi/build/auto
+function inv_gui:api/build/auto
 ```
 
 **Layout symbols:**
@@ -81,30 +81,30 @@ function inv_gui:dataapi/build/auto
 
 ---
 
-## `inv_gui:dataapi/build/chest_minecart`
+## `inv_gui:api/build/chest_minecart`
 
 Builds the menu directly into a Chest Minecart.
 
 ---
 
-## `inv_gui:dataapi/build/ender_chest`
+## `inv_gui:api/build/ender_chest`
 
 Builds the menu directly into an Ender Chest.
 
 ---
 
-## `inv_gui:dataapi/set_menu`
+## `inv_gui:api/set_menu`
 
 Replaces the player's currently open menu with the specified ID.
 
 ```mcfunction
 data modify storage inv_gui:data in.id set value "settings_menu"
-function inv_gui:dataapi/set_menu
+function inv_gui:api/set_menu
 ```
 
 ---
 
-## `inv_gui:dataapi/unregister_item`
+## `inv_gui:api/unregister_item`
 
 Removes a previously registered item from the registry.
 

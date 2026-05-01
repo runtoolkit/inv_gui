@@ -1,7 +1,7 @@
-#> inv_gui:dataapi/setup
+#> inv_gui:api/setup
 #
 # Set up InvGui to work properly in the dimension of the execution point
 #
 # @api
 
-function inv_gui:datacore/api/setup/_
+function inv_gui:core/api/setup/_

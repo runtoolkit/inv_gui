@@ -1,8 +1,8 @@
-#> inv_gui:datacore/common/gui_target/set
+#> inv_gui:core/common/gui_target/set
 #
 # Assign InvGui.Target tag to the chest minecart the player has open
 #
-# @within function inv_gui:datacore/**
+# @within function inv_gui:core/**
 
 #>
 # @private

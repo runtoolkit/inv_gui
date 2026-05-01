@@ -1,11 +1,11 @@
-#> inv_gui:datacore/api/set_menu/chest_minecart
-# @within function inv_gui:datacore/api/set_menu/_
+#> inv_gui:core/api/set_menu/chest_minecart
+# @within function inv_gui:core/api/set_menu/_
 
 ## Set the isInCallback flag.
-    function inv_gui:datacore/common/is_in_callback/set
+    function inv_gui:core/common/is_in_callback/set
 
 ## Assign InvGui.Target tag
-    function inv_gui:datacore/common/gui_target/set
+    function inv_gui:core/common/gui_target/set
 
 
 # Callback: dispatch event to listener.
@@ -18,7 +18,7 @@
 
 
 ## Remove InvGui.Target tag
-    function inv_gui:datacore/common/gui_target/reset
+    function inv_gui:core/common/gui_target/reset
 
 ## Clear the isInCallback flag.
-    function inv_gui:datacore/common/is_in_callback/reset
+    function inv_gui:core/common/is_in_callback/reset

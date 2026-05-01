@@ -1,4 +1,4 @@
-#> inv_gui:dataapi/build/auto
+#> inv_gui:api/build/auto
 #
 # Create a menu in the Minecart with Chest or Ender Chest opened by the executing player
 #
@@ -11,4 +11,4 @@
 #
 # @api
 
-function inv_gui:datacore/api/build/auto/_
+function inv_gui:core/api/build/auto/_

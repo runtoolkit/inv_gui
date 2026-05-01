@@ -1,4 +1,4 @@
-#> inv_gui:dataapi/set_menu
+#> inv_gui:api/set_menu
 #
 # If the executor player has Minecart with Chest or Ender Chest open, it will be reconfigured in the specified menu
 #
@@ -9,4 +9,4 @@
 #
 # @api
 
-function inv_gui:datacore/api/set_menu/_
+function inv_gui:core/api/set_menu/_

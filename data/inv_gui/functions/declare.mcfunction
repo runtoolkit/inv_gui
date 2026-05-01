@@ -1,4 +1,4 @@
-#> inv_gui:datadeclare
+#> inv_gui:declare
 # @private
 # This file documents the full public API surface.
 # Developer tooling (e.g. mc-build, sandstone) uses this file as a reference.
@@ -18,21 +18,21 @@
 
 #>
 # @public — Item modifiers
-    #declare item_modifier inv_gui:dataregister_item/normal
-    #declare item_modifier inv_gui:dataregister_item/button
+    #declare item_modifier inv_gui:register_item/normal
+    #declare item_modifier inv_gui:register_item/button
 
 #>
 # @public — Event hooks
-    #declare tag/function inv_gui:datahandler/on_open/chest_minecart
-    #declare tag/function inv_gui:datahandler/on_open/ender_chest
-    #declare tag/function inv_gui:datahandler/on_close/chest_minecart
-    #declare tag/function inv_gui:datahandler/on_close/ender_chest
-    #declare tag/function inv_gui:datahandler/on_select/chest_minecart
-    #declare tag/function inv_gui:datahandler/on_select/ender_chest
-    #declare tag/function inv_gui:dataset_menu/chest_minecart
-    #declare tag/function inv_gui:dataset_menu/ender_chest
-    #declare tag/function inv_gui:dataset_variable/chest_minecart
-    #declare tag/function inv_gui:dataset_variable/ender_chest
+    #declare tag/function inv_gui:handler/on_open/chest_minecart
+    #declare tag/function inv_gui:handler/on_open/ender_chest
+    #declare tag/function inv_gui:handler/on_close/chest_minecart
+    #declare tag/function inv_gui:handler/on_close/ender_chest
+    #declare tag/function inv_gui:handler/on_select/chest_minecart
+    #declare tag/function inv_gui:handler/on_select/ender_chest
+    #declare tag/function inv_gui:set_menu/chest_minecart
+    #declare tag/function inv_gui:set_menu/ender_chest
+    #declare tag/function inv_gui:set_variable/chest_minecart
+    #declare tag/function inv_gui:set_variable/ender_chest
 
 
 # Item registry container — local storage
@@ -43,7 +43,7 @@
 
 
 # Primary data storage — persistent data (current menu ID, player state)
-    #declare storage inv_gui:datacore
+    #declare storage inv_gui:core
 
 # Temporary operation storage
     #declare storage inv_gui:datatemp
@@ -51,8 +51,8 @@
     #declare storage inv_gui:datatemp/set_menu
 
 # Helper function storage
-    #declare storage inv_gui:datautil
-    #declare storage inv_gui:datautil/temp
+    #declare storage inv_gui:util
+    #declare storage inv_gui:util/temp
 
 
 # Scoreboard'lar
@@ -105,13 +105,13 @@
 
 
 # Advancement
-    #declare advancement inv_gui:dataon_container_open
+    #declare advancement inv_gui:on_container_open
 
 # Item modifier
-    #declare item_modifier inv_gui:dataset_listener
+    #declare item_modifier inv_gui:set_listener
 
 # Item tag
-    #declare tag/item inv_gui:dataall
+    #declare tag/item inv_gui:all
 
 
 # Dependencies — External libraries

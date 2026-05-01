@@ -1,8 +1,8 @@
-#> inv_gui:datacore/handler/on_select/menu_type/ender_chest/set_current_menu
-# @within function inv_gui:datacore/handler/on_select/menu_type/ender_chest/callback
+#> inv_gui:core/handler/on_select/menu_type/ender_chest/set_current_menu
+# @within function inv_gui:core/handler/on_select/menu_type/ender_chest/callback
 
 ## Set the isInCallback flag.
-    function inv_gui:datacore/common/is_in_callback/set
+    function inv_gui:core/common/is_in_callback/set
 
 
 # Callback: dispatch event to listener.
@@ -14,4 +14,4 @@
 
 
 ## Clear the isInCallback flag.
-    function inv_gui:datacore/common/is_in_callback/reset
+    function inv_gui:core/common/is_in_callback/reset

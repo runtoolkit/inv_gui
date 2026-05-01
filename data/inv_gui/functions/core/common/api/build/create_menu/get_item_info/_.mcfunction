@@ -1,4 +1,4 @@
-#> inv_gui:datacore/common/api/build/create_menu/get_item_info/_
+#> inv_gui:core/common/api/build/create_menu/get_item_info/_
 #
 # Returns the ItemInfo for the specified key.
 #
@@ -14,17 +14,17 @@
 #       isGlobalItemInfo: boolean
 #           Whether the item info is global
 #
-# @within function inv_gui:datacore/common/api/build/create_menu/set_item/_
+# @within function inv_gui:core/common/api/build/create_menu/set_item/_
 
 # Retrieve from LocalItemInfoMap
-    function inv_gui:datacore/common/api/build/create_menu/get_item_info/from_local_map
+    function inv_gui:core/common/api/build/create_menu/get_item_info/from_local_map
 
 # Retrieve from GlobalItemInfoMap
-    execute if data storage inv_gui:datautil out{contains:false} run function inv_gui:datacore/common/api/build/create_menu/get_item_info/from_global_map
+    execute if data storage inv_gui:util out{contains:false} run function inv_gui:core/common/api/build/create_menu/get_item_info/from_global_map
 
 
 # Reset util storage.
-    function inv_gui:datautil/cleanup
+    function inv_gui:util/cleanup
 
 # Clean up temporary data.
     data remove storage inv_gui:datatemp Key

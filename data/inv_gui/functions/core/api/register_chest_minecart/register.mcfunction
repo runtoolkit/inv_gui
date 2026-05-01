@@ -1,5 +1,5 @@
-#> inv_gui:datacore/api/register_chest_minecart/register
-# @within function inv_gui:datacore/api/register_chest_minecart/_
+#> inv_gui:core/api/register_chest_minecart/register
+# @within function inv_gui:core/api/register_chest_minecart/_
 
 #>
 # @private

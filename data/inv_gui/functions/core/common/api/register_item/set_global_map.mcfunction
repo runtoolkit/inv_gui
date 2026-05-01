@@ -1,4 +1,4 @@
-#> inv_gui:datacore/common/api/register_item/set_global_map
+#> inv_gui:core/common/api/register_item/set_global_map
 #
 # Set in GlobalItemInfoMap
 #
@@ -7,17 +7,17 @@
 #       ItemInfo: GlobalItemInfo
 #           Value of the element to set
 #
-# @within function inv_gui:datacore/api/register_item/*/register_global_item
+# @within function inv_gui:core/api/register_item/*/register_global_item
 
 # Create map
-    data modify storage inv_gui:datautil in.key set from storage inv_gui:data in.key
-    data modify storage inv_gui:datautil in.value set from storage inv_gui:datatemp ItemInfo
-    data modify storage inv_gui:datautil in.map set from storage inv_gui:datacore GlobalItemInfoMap
-    function inv_gui:datautil/map/set
+    data modify storage inv_gui:util in.key set from storage inv_gui:data in.key
+    data modify storage inv_gui:util in.value set from storage inv_gui:datatemp ItemInfo
+    data modify storage inv_gui:util in.map set from storage inv_gui:core GlobalItemInfoMap
+    function inv_gui:util/map/set
 
 # Overwrite in GlobalItemInfoMap
-    data modify storage inv_gui:datacore GlobalItemInfoMap set from storage inv_gui:datautil out.map
-    function inv_gui:datautil/cleanup
+    data modify storage inv_gui:core GlobalItemInfoMap set from storage inv_gui:util out.map
+    function inv_gui:util/cleanup
 
 
 # Clean up temporary data.

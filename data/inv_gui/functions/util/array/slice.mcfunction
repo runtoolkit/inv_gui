@@ -1,9 +1,9 @@
-#> inv_gui:datautil/array/slice
+#> inv_gui:util/array/slice
 #
 # Returns a sub-array for the specified range.
 #
 # @input
-#   storage inv_gui:datautil in
+#   storage inv_gui:util in
 #       array: any[]
 #           Target array
 #       start?: int
@@ -12,10 +12,10 @@
 #           End index (optional)
 #
 # @output
-#   storage inv_gui:datautil out
+#   storage inv_gui:util out
 #       array: any[]
 #           Extracted array
 #
-# @within * inv_gui:data**
+# @within * inv_gui:**
 
-function inv_gui:datautil/array/core/slice/_
+function inv_gui:util/array/core/slice/_

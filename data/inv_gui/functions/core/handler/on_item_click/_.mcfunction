@@ -1,9 +1,9 @@
-#> inv_gui:datacore/handler/on_item_click/_
+#> inv_gui:core/handler/on_item_click/_
 #
 # Called when an item is clicked.
 #
-# @within function inv_gui:datacore/emitter/check_item_click/_
+# @within function inv_gui:core/emitter/check_item_click/_
 
 # Fire event
     data modify storage inv_gui:datatemp SelectionType set value "CLICK"
-    function inv_gui:datacore/handler/on_select/_
+    function inv_gui:core/handler/on_select/_

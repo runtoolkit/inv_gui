@@ -1,4 +1,4 @@
-#> inv_gui:dataapi/unregister_item
+#> inv_gui:api/unregister_item
 #
 # Unregister items that can be referenced from all locations
 #
@@ -9,4 +9,4 @@
 #
 # @api
 
-function inv_gui:datacore/api/unregister_item/_
+function inv_gui:core/api/unregister_item/_

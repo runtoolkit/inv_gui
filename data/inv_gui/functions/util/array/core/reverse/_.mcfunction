@@ -1,17 +1,17 @@
-#> inv_gui:datautil/array/core/reverse/_
+#> inv_gui:util/array/core/reverse/_
 #
 # @input
-#   storage inv_gui:datautil in
+#   storage inv_gui:util in
 #       array: any[]
 #
 # @output
-#   storage inv_gui:datautil out
+#   storage inv_gui:util out
 #       array: any[]
 #
-# @within function inv_gui:datautil/array/reverse
+# @within function inv_gui:util/array/reverse
 
 # Reverse element order
-    function inv_gui:datautil/array/core/reverse/loop
+    function inv_gui:util/array/core/reverse/loop
 
 # Clean up temporary data.
-    data remove storage inv_gui:datautil in
+    data remove storage inv_gui:util in

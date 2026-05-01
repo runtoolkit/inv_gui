@@ -1,9 +1,9 @@
-#> inv_gui:datautil/map/set
+#> inv_gui:util/map/set
 #
 # Adds, updates, or creates an element with the specified key and value.
 #
 # @input
-#   storage inv_gui:datautil in
+#   storage inv_gui:util in
 #       key: any
 #           Key of the element to set
 #       value: any
@@ -12,10 +12,10 @@
 #           Target map to add/update (optional)
 #
 # @output
-#   storage inv_gui:datautil out
+#   storage inv_gui:util out
 #       map: Map
 #           Map containing the set element
 #
-# @within * inv_gui:data**
+# @within * inv_gui:**
 
-function inv_gui:datautil/map/core/set/_
+function inv_gui:util/map/core/set/_

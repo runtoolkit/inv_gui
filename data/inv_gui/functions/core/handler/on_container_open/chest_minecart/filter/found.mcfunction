@@ -1,5 +1,5 @@
-#> inv_gui:datacore/handler/on_container_open/chest_minecart/filter/found
-# @within function inv_gui:datacore/handler/on_container_open/chest_minecart/filter/0
+#> inv_gui:core/handler/on_container_open/chest_minecart/filter/found
+# @within function inv_gui:core/handler/on_container_open/chest_minecart/filter/0
 
 ## Assign InvGui.Target tag
     tag @s add InvGui.Target

@@ -1,4 +1,4 @@
-#> inv_gui:datacore/api/build/chest_minecart/set_menu
+#> inv_gui:core/api/build/chest_minecart/set_menu
 #
 # Set the menu
 #
@@ -7,7 +7,7 @@
 #       container.0~26
 #           Menu to set
 #
-# @within function inv_gui:datacore/api/build/chest_minecart/_
+# @within function inv_gui:core/api/build/chest_minecart/_
 
 # Set the menu
     item replace entity @s container.0 from block 10000 2 10000 container.0

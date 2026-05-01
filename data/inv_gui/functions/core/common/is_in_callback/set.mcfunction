@@ -1,7 +1,7 @@
-#> inv_gui:datacore/common/is_in_callback/set
+#> inv_gui:core/common/is_in_callback/set
 #
 # Set the isInCallback flag.
 #
-# @within function inv_gui:datacore/**
+# @within function inv_gui:core/**
 
-data modify storage inv_gui:datacore isInCallback set value true
+data modify storage inv_gui:core isInCallback set value true

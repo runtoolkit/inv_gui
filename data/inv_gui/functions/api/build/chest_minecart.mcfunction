@@ -1,4 +1,4 @@
-#> inv_gui:dataapi/build/chest_minecart
+#> inv_gui:api/build/chest_minecart
 #
 # Create a menu in the executor's inventory
 #
@@ -11,4 +11,4 @@
 #
 # @api
 
-function inv_gui:datacore/api/build/chest_minecart/_
+function inv_gui:core/api/build/chest_minecart/_

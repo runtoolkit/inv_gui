@@ -1,11 +1,11 @@
-#> inv_gui:datacore/handler/on_container_close/ender_chest
+#> inv_gui:core/handler/on_container_close/ender_chest
 #
 # Called when an Ender Chest is closed.
 #
-# @within function inv_gui:datacore/emitter/check_container_close/ender_chest
+# @within function inv_gui:core/emitter/check_container_close/ender_chest
 
 ## Set the isInCallback flag.
-    function inv_gui:datacore/common/is_in_callback/set
+    function inv_gui:core/common/is_in_callback/set
 
 
 # Callback: dispatch event to listener. (return Set value)
@@ -22,7 +22,7 @@
 
 
 ## Clear the isInCallback flag.
-    function inv_gui:datacore/common/is_in_callback/reset
+    function inv_gui:core/common/is_in_callback/reset
 
 
 # Remove menu info from OhMyDat storage

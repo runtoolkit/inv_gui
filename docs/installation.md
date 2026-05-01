@@ -30,13 +30,13 @@ world/
 
 ### 3. Run Setup per Dimension
 
-`inv_gui:dataapi/setup` must be run **inside** the target dimension.  
+`inv_gui:api/setup` must be run **inside** the target dimension.  
 Use `execute in` to ensure correct dimension context:
 
 ```mcfunction
-/execute in minecraft:overworld run function inv_gui:dataapi/setup
-/execute in minecraft:the_nether run function inv_gui:dataapi/setup
-/execute in minecraft:the_end run function inv_gui:dataapi/setup
+/execute in minecraft:overworld run function inv_gui:api/setup
+/execute in minecraft:the_nether run function inv_gui:api/setup
+/execute in minecraft:the_end run function inv_gui:api/setup
 ```
 
 Only run setup in dimensions where you intend to use inv_gui menus.
@@ -76,4 +76,4 @@ setblock 10000 1 10000 minecraft:air
 setblock 10000 2 10000 minecraft:air
 ```
 
-After resetting, run `inv_gui:dataapi/setup` again.
+After resetting, run `inv_gui:api/setup` again.

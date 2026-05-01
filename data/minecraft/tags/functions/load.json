@@ -1,6 +1,6 @@
 {
     "replace": false,
     "values": [
-        "inv_gui:datacore/load"
+        "inv_gui:core/load"
     ]
 }

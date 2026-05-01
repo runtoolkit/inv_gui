@@ -1,4 +1,4 @@
-#> inv_gui:dataapi/register_item/normal
+#> inv_gui:api/register_item/normal
 #
 # Register the item as normal
 #
@@ -14,4 +14,4 @@
 #
 # @api
 
-function inv_gui:datacore/api/register_item/normal/_
+function inv_gui:core/api/register_item/normal/_

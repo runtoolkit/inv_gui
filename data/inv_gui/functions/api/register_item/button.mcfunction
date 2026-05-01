@@ -1,4 +1,4 @@
-#> inv_gui:dataapi/register_item/button
+#> inv_gui:api/register_item/button
 #
 # Register an item as a button
 #
@@ -16,4 +16,4 @@
 #
 # @api
 
-function inv_gui:datacore/api/register_item/button/_
+function inv_gui:core/api/register_item/button/_

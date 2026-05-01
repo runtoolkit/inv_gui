@@ -1,25 +1,25 @@
-#> inv_gui:datacore/api/build/chest_minecart/_
+#> inv_gui:core/api/build/chest_minecart/_
 #
 # @input
 #   storage inv_gui:data in
 #       id: any
 #       contents: (string[] @ 9)[] @ 3
 #
-# @within function inv_gui:dataapi/build/chest_minecart
+# @within function inv_gui:api/build/chest_minecart
 
 ## pre
-    function inv_gui:datacore/common/api/build/pre
+    function inv_gui:core/common/api/build/pre
 
 
 # Register executor
-    function inv_gui:dataapi/register_chest_minecart
+    function inv_gui:api/register_chest_minecart
 
 # Create the menu
-    function inv_gui:datacore/common/api/build/create_menu/_
+    function inv_gui:core/common/api/build/create_menu/_
 
 
 ## post
-    function inv_gui:datacore/common/api/build/post
+    function inv_gui:core/common/api/build/post
 
 
 # Write menu info to OhMyDat storage
@@ -28,11 +28,11 @@
     data modify storage oh_my_dat: _[-4][-4][-4][-4][-4][-4][-4][-4].InvGui.Contents set from block 10000 2 10000 Items
 
 # Set the menu
-    function inv_gui:datacore/api/build/chest_minecart/set_menu
+    function inv_gui:core/api/build/chest_minecart/set_menu
 
 
 # Closes the menu session; clears temporary container slots and storage data.
-    function inv_gui:datacore/common/api/build/close_session
+    function inv_gui:core/common/api/build/close_session
 
 # Clean up temporary data.
     data remove storage inv_gui:data in

@@ -1,8 +1,8 @@
-#> inv_gui:datacore/handler/on_container_open/ender_chest/_
+#> inv_gui:core/handler/on_container_open/ender_chest/_
 #
 # Called when an Ender Chest is opened.
 #
-# @within function inv_gui:datacore/emitter/check_container_open/ender_chest
+# @within function inv_gui:core/emitter/check_container_open/ender_chest
 
 # Write open container type to OhMyDat storage
     function #oh_my_dat:please
@@ -10,7 +10,7 @@
 
 
 ## Set the isInCallback flag.
-    function inv_gui:datacore/common/is_in_callback/set
+    function inv_gui:core/common/is_in_callback/set
 
 
 # Callback: dispatch event to listener.
@@ -18,4 +18,4 @@
 
 
 ## Clear the isInCallback flag.
-    function inv_gui:datacore/common/is_in_callback/reset
+    function inv_gui:core/common/is_in_callback/reset

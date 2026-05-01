@@ -1,4 +1,4 @@
-#> inv_gui:datacore/common/api/build/get_item/_
+#> inv_gui:core/common/api/build/get_item/_
 #
 # Retrieves the specified item from the registry shulker box.
 #
@@ -12,10 +12,10 @@
 #       container.0
 #           Retrieved item
 #
-# @within function inv_gui:datacore/**
+# @within function inv_gui:core/**
 
 #>
-# @within function inv_gui:datacore/common/api/build/get_item/**
+# @within function inv_gui:core/common/api/build/get_item/**
     #declare score_holder $TargetSlot
 
 
@@ -23,7 +23,7 @@
     execute store result score $TargetSlot InvGui run data get storage inv_gui:datatemp TargetSlot
 
 # Retrieve from registry shulker box
-    execute positioned 10000 1 10000 run function inv_gui:datacore/common/api/build/get_item/b-0/0
+    execute positioned 10000 1 10000 run function inv_gui:core/common/api/build/get_item/b-0/0
 
 
 # Clean up temporary data.

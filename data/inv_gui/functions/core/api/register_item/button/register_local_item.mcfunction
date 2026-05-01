@@ -1,12 +1,12 @@
-#> inv_gui:datacore/api/register_item/button/register_local_item
-# @within function inv_gui:datacore/api/register_item/button/_
+#> inv_gui:core/api/register_item/button/register_local_item
+# @within function inv_gui:core/api/register_item/button/_
 
 # Get item at slot to save to
-    function inv_gui:datacore/common/api/register_item/get_slot_index
+    function inv_gui:core/common/api/register_item/get_slot_index
 
 # Save item
     data modify storage inv_gui:datatemp TargetSlot set from storage inv_gui:datatemp Slot
-    function inv_gui:datacore/common/api/register_item/save_item/_
+    function inv_gui:core/common/api/register_item/save_item/_
 
 
 # Compose LocalItemInfo
@@ -14,7 +14,7 @@
     data modify storage inv_gui:datatemp ItemInfo.Slot set from storage inv_gui:datatemp Slot
 
 # Set in LocalItemInfoMap
-    function inv_gui:datacore/common/api/register_item/set_local_map
+    function inv_gui:core/common/api/register_item/set_local_map
 
 
 # Clean up temporary data.

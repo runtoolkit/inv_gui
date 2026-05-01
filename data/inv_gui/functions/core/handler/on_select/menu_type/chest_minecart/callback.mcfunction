@@ -1,8 +1,8 @@
-#> inv_gui:datacore/handler/on_select/menu_type/chest_minecart/callback
-# @within function inv_gui:datacore/handler/on_select/menu_type/chest_minecart/_
+#> inv_gui:core/handler/on_select/menu_type/chest_minecart/callback
+# @within function inv_gui:core/handler/on_select/menu_type/chest_minecart/_
 
 ## Set the isInCallback flag.
-    function inv_gui:datacore/common/is_in_callback/set
+    function inv_gui:core/common/is_in_callback/set
 
 
 # Callback: dispatch event to listener.
@@ -18,11 +18,11 @@
 
 
 ## Clear the isInCallback flag.
-    function inv_gui:datacore/common/is_in_callback/reset
+    function inv_gui:core/common/is_in_callback/reset
 
 
 # If Build API was not called during the callback, update the current menu.
-    execute unless data storage inv_gui:datacore {CalledBuildApi:true} run function inv_gui:datacore/handler/on_select/menu_type/chest_minecart/set_current_menu
+    execute unless data storage inv_gui:core {CalledBuildApi:true} run function inv_gui:core/handler/on_select/menu_type/chest_minecart/set_current_menu
 
 # Clean up temporary data.
-    data remove storage inv_gui:datacore CalledBuildApi
+    data remove storage inv_gui:core CalledBuildApi

@@ -1,11 +1,11 @@
-#> inv_gui:datautil/map/core/set/update_map/element/revert
+#> inv_gui:util/map/core/set/update_map/element/revert
 # @within function
-#   inv_gui:datautil/map/core/set/update_map/update
-#   inv_gui:datautil/map/core/set/update_map/element/revert
+#   inv_gui:util/map/core/set/update_map/update
+#   inv_gui:util/map/core/set/update_map/element/revert
 
 # Append last array element to end
-    data modify storage inv_gui:datautil/temp TargetElements append from storage inv_gui:datautil/temp DeletedElements[-1]
-    data remove storage inv_gui:datautil/temp DeletedElements[-1]
+    data modify storage inv_gui:util/temp TargetElements append from storage inv_gui:util/temp DeletedElements[-1]
+    data remove storage inv_gui:util/temp DeletedElements[-1]
 
 # Recurse until all elements are restored
-    execute if data storage inv_gui:datautil/temp DeletedElements[-1] run function inv_gui:datautil/map/core/set/update_map/element/revert
+    execute if data storage inv_gui:util/temp DeletedElements[-1] run function inv_gui:util/map/core/set/update_map/element/revert

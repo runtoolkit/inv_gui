@@ -1,4 +1,4 @@
-#> inv_gui:datacore/common/api/build/create_menu/_
+#> inv_gui:core/common/api/build/create_menu/_
 #
 # Create the menu
 #
@@ -14,21 +14,21 @@
 #       container.0~26
 #           Created menu
 #
-# @within function inv_gui:datacore/api/build/**
+# @within function inv_gui:core/api/build/**
 
 #>
 # @within function
-#   inv_gui:datacore/common/api/build/**
+#   inv_gui:core/common/api/build/**
     #declare score_holder $Slot
 
 
 # Flatten contents
-    data modify storage inv_gui:datautil in.array set from storage inv_gui:data in.contents
-    function inv_gui:datautil/array/flat
+    data modify storage inv_gui:util in.array set from storage inv_gui:data in.contents
+    function inv_gui:util/array/flat
 
 # Assign contents
-    data modify storage inv_gui:datatemp Contents set from storage inv_gui:datautil out.array
-    function inv_gui:datautil/cleanup
+    data modify storage inv_gui:datatemp Contents set from storage inv_gui:util out.array
+    function inv_gui:util/cleanup
 
 
 # Set the starting slot for item placement
@@ -36,7 +36,7 @@
     scoreboard players remove $Slot InvGui 1
 
 # Place item
-    function inv_gui:datacore/common/api/build/create_menu/loop
+    function inv_gui:core/common/api/build/create_menu/loop
 
 
 # Clean up temporary data.

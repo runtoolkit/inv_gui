@@ -1,30 +1,30 @@
-#> inv_gui:datautil/map/core/delete/_
+#> inv_gui:util/map/core/delete/_
 #
 # @input
-#   storage inv_gui:datautil in
+#   storage inv_gui:util in
 #       key: any
 #       map: Map
 #
 # @output
-#   storage inv_gui:datautil out
+#   storage inv_gui:util out
 #       map: Map
 #
-# @within function inv_gui:datautil/map/delete
+# @within function inv_gui:util/map/delete
 
 # Copy target map
-    data modify storage inv_gui:datautil out.map set from storage inv_gui:datautil in.map
+    data modify storage inv_gui:util out.map set from storage inv_gui:util in.map
 
 # Move element with specified key to out.map[-1]
-    function inv_gui:datautil/map/core/delete/move
+    function inv_gui:util/map/core/delete/move
 
 # Delete element
-    data remove storage inv_gui:datautil out.map[-1]
+    data remove storage inv_gui:util out.map[-1]
 
 # Restore the deleted element
-    function inv_gui:datautil/map/core/delete/revert
+    function inv_gui:util/map/core/delete/revert
 
 # Clean up temporary data.
-    data remove storage inv_gui:datautil/temp DeletedElements
-    data remove storage inv_gui:datautil/temp Key
-    data remove storage inv_gui:datautil/temp Result
-    data remove storage inv_gui:datautil in
+    data remove storage inv_gui:util/temp DeletedElements
+    data remove storage inv_gui:util/temp Key
+    data remove storage inv_gui:util/temp Result
+    data remove storage inv_gui:util in

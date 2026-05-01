@@ -1,8 +1,8 @@
-#> inv_gui:datacore/common/gui_player/set
+#> inv_gui:core/common/gui_player/set
 #
 # Assign InvGui.Player tag to the player opening the executor's chest minecart
 #
-# @within function inv_gui:datacore/**
+# @within function inv_gui:core/**
 
 #>
 # @private

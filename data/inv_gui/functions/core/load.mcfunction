@@ -1,4 +1,4 @@
-#> inv_gui:datacore/load
+#> inv_gui:core/load
 #
 # Runs when the datapack is loaded (server start / /reload).
 # Initializes scoreboards and storage; existing data is preserved.

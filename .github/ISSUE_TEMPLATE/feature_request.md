@@ -16,7 +16,7 @@ How should it work? Describe with an API usage example:
 
 ```mcfunction
 data modify storage inv_gui:data in.xxx set value "..."
-function inv_gui:dataapi/...
+function inv_gui:api/...
 ```
 
 ## Alternatives

@@ -1,4 +1,4 @@
-#> inv_gui:dataapi/build/ender_chest
+#> inv_gui:api/build/ender_chest
 #
 # Create a menu in the executor's ender chest
 #
@@ -11,4 +11,4 @@
 #
 # @api
 
-function inv_gui:datacore/api/build/ender_chest/_
+function inv_gui:core/api/build/ender_chest/_

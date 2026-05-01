@@ -1,4 +1,4 @@
-#> inv_gui:datacore/common/api/register_item/get_slot_index
+#> inv_gui:core/common/api/register_item/get_slot_index
 #
 # Get item at slot to save to
 #
@@ -7,7 +7,7 @@
 #       Slot: byte
 #           Retrieved slot
 #
-# @within function inv_gui:datacore/api/register_item/*/register_local_item
+# @within function inv_gui:core/api/register_item/*/register_local_item
 
 # Get item at slot to save to
     execute store result storage inv_gui:datatemp Slot byte 1.0 run scoreboard players get $LocalItemSlotIndex InvGui

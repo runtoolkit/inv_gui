@@ -1,17 +1,17 @@
-#> inv_gui:datautil/array/flat
+#> inv_gui:util/array/flat
 #
 # Returns a recursively flattened array.
 #
 # @input
-#   storage inv_gui:datautil in
+#   storage inv_gui:util in
 #       array: any[]
 #           Target array
 #
 # @output
-#   storage inv_gui:datautil out
+#   storage inv_gui:util out
 #       array: any[]
 #           Flattened array
 #
-# @within * inv_gui:data**
+# @within * inv_gui:**
 
-function inv_gui:datautil/array/core/flat/_
+function inv_gui:util/array/core/flat/_

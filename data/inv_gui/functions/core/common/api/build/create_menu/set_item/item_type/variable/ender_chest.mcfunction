@@ -1,5 +1,5 @@
-#> inv_gui:datacore/common/api/build/create_menu/set_item/item_type/variable/ender_chest
-# @within function inv_gui:datacore/common/api/build/create_menu/set_item/item_type/variable/_
+#> inv_gui:core/common/api/build/create_menu/set_item/item_type/variable/ender_chest
+# @within function inv_gui:core/common/api/build/create_menu/set_item/item_type/variable/_
 
 ## Assign InvGui.Player tag
     tag @s add InvGui.Player
@@ -10,4 +10,4 @@
 
 
 ## Remove InvGui.Player tag
-    function inv_gui:datacore/common/gui_player/reset
+    function inv_gui:core/common/gui_player/reset

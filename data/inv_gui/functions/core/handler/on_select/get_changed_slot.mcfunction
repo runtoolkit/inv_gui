@@ -1,4 +1,4 @@
-#> inv_gui:datacore/handler/on_select/get_changed_slot
+#> inv_gui:core/handler/on_select/get_changed_slot
 #
 # Detects the item in the changed slot.
 #
@@ -7,7 +7,7 @@
 #       Item: Item
 #           Item in the changed slot
 #
-# @within function inv_gui:datacore/handler/on_select/menu_type/*/_
+# @within function inv_gui:core/handler/on_select/menu_type/*/_
 
 execute if data storage inv_gui:datatemp Contents[{Slot:0b,  tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:0b,  tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:0b}]
 execute if data storage inv_gui:datatemp Contents[{Slot:1b,  tag:{InvGui:{isButton:true}}}] unless data storage inv_gui:datatemp CurrentContents[{Slot:1b,  tag:{InvGui:{isButton:true}}}] run data modify storage inv_gui:datatemp Item set from storage inv_gui:datatemp Contents[{Slot:1b}]

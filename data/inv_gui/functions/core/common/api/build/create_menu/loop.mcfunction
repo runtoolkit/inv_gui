@@ -1,7 +1,7 @@
-#> inv_gui:datacore/common/api/build/create_menu/loop
+#> inv_gui:core/common/api/build/create_menu/loop
 # @within function
-#   inv_gui:datacore/common/api/build/create_menu/_
-#   inv_gui:datacore/common/api/build/create_menu/loop
+#   inv_gui:core/common/api/build/create_menu/_
+#   inv_gui:core/common/api/build/create_menu/loop
 
 # Set slot of item to place
     execute store result storage inv_gui:datatemp Slot byte 1.0 run scoreboard players get $Slot InvGui
@@ -11,11 +11,11 @@
     data remove storage inv_gui:datatemp Contents[-1]
 
 # Place item
-    function inv_gui:datacore/common/api/build/create_menu/set_item/_
+    function inv_gui:core/common/api/build/create_menu/set_item/_
 
 
 # Change slot of item to place
     scoreboard players remove $Slot InvGui 1
 
 # Recurse until all items are placed
-    execute if score $Slot InvGui matches 0.. run function inv_gui:datacore/common/api/build/create_menu/loop
+    execute if score $Slot InvGui matches 0.. run function inv_gui:core/common/api/build/create_menu/loop

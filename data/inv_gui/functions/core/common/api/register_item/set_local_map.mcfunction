@@ -1,4 +1,4 @@
-#> inv_gui:datacore/common/api/register_item/set_local_map
+#> inv_gui:core/common/api/register_item/set_local_map
 #
 # Set in LocalItemInfoMap
 #
@@ -7,17 +7,17 @@
 #       ItemInfo: LocalItemInfo
 #           Value of the element to set
 #
-# @within function inv_gui:datacore/api/register_item/*/register_local_item
+# @within function inv_gui:core/api/register_item/*/register_local_item
 
 # Create map
-    data modify storage inv_gui:datautil in.key set from storage inv_gui:data in.key
-    data modify storage inv_gui:datautil in.value set from storage inv_gui:datatemp ItemInfo
-    data modify storage inv_gui:datautil in.map set from storage inv_gui:datacore LocalItemInfoMap
-    function inv_gui:datautil/map/set
+    data modify storage inv_gui:util in.key set from storage inv_gui:data in.key
+    data modify storage inv_gui:util in.value set from storage inv_gui:datatemp ItemInfo
+    data modify storage inv_gui:util in.map set from storage inv_gui:core LocalItemInfoMap
+    function inv_gui:util/map/set
 
 # Overwrite in LocalItemInfoMap
-    data modify storage inv_gui:datacore LocalItemInfoMap set from storage inv_gui:datautil out.map
-    function inv_gui:datautil/cleanup
+    data modify storage inv_gui:core LocalItemInfoMap set from storage inv_gui:util out.map
+    function inv_gui:util/cleanup
 
 
 # Clean up temporary data.

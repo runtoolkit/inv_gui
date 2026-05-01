@@ -1,0 +1,24 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Datapack zip oluştur
+        run: |
+          zip -r inv_gui-${{ github.ref_name }}.zip \
+            data/ pack.mcmeta README.md CHANGELOG.md docs/ \
+            --exclude "*.git*"
+
+      - name: GitHub Release oluştur
+        uses: softprops/action-gh-release@v1
+        with:
+          files: inv_gui-${{ github.ref_name }}.zip
+          body_path: CHANGELOG.md

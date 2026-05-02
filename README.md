@@ -81,7 +81,7 @@ inv_gui:data      Main input/output storage (API parameters)
   callback.*      Return data after a click event
 
 inv_gui:core      Internal persistent data (CurrentMenuType etc.)
-inv_gui:datatemp      Temporary operation data
+inv_gui:temp      Temporary operation data
 inv_gui:util      Helper module data
 ```
 

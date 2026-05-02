@@ -22,3 +22,6 @@ execute unless score $MinecartIndex inv_gui = $MinecartIndex inv_gui run scorebo
 
 # Constant setup
 scoreboard players set $65536 inv_gui 65536
+
+# Notify all players that inv_gui has been loaded
+tellraw @a ["",{"text":"[","color":"dark_aqua"},{"text":"inv_gui","color":"aqua","bold":true},{"text":"] ","color":"dark_aqua"},{"text":"v1.0.0 loaded.","color":"white"}]

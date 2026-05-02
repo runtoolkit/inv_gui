@@ -9,13 +9,13 @@
     data modify storage inv_gui:core GlobalItemInfoMap set value []
 
 # Scoreboard setup
-    scoreboard objectives add Inv GUI dummy
-    scoreboard objectives add Inv GUI.Id dummy
-    scoreboard objectives add Inv GUI.Drop custom:minecraft.drop
+    scoreboard objectives add InvGui dummy
+    scoreboard objectives add InvGui.Id dummy
+    scoreboard objectives add InvGui.Drop custom:minecraft.drop
 
 # Score holder setup
-    scoreboard players set $LocalItemSlotIndex Inv GUI 0
-    scoreboard players set $MinecartIndex Inv GUI 0
+    scoreboard players set $LocalItemSlotIndex InvGui 0
+    scoreboard players set $MinecartIndex InvGui 0
 
 # Constant setup
-    scoreboard players set $65536 Inv GUI 65536
+    scoreboard players set $65536 InvGui 65536

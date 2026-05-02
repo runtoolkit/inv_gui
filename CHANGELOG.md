@@ -12,7 +12,7 @@
 - Namespace: `sketch` → `inv_gui`
 - Scoreboards: `Sketch` / `Sketch.Id` / `Sketch.Drop` → `InvGui` / `InvGui.Id` / `InvGui.Drop`
 - Entity tags: `Sketch.*` → `InvGui.*`
-- Storage: `sketch:` → `inv_gui:data` (main I/O), `inv_gui:core`, `inv_gui:datatemp`, `inv_gui:util`
+- Storage: `sketch:` → `inv_gui:data` (main I/O), `inv_gui:core`, `inv_gui:temp`, `inv_gui:util`
 - Container lock: `Lock:"Sketch"` → `Lock:"InvGui"`
 - Internal dirs: `sketch_player/` → `gui_player/`, `sketch_target/` → `gui_target/`
 - Migration system removed (fresh v1.0.0 start)

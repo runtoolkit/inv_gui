@@ -1,4 +1,4 @@
-name: Datapack CI
+name: Datapack Lint
 on:
   push:
   pull_request:
@@ -6,11 +6,9 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      # 1. Download repository
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      # 2. JSON validation
       - name: Validate JSON
         run: |
           echo "Checking JSON..."
@@ -18,7 +16,6 @@ jobs:
           sudo apt-get install -y -q jq
           find . -name "*.json" -not -path "./.git/*" -print0 | xargs -0 -n1 jq empty
 
-      # 3. mcfunction pre-check
       - name: Lint mcfunction files (pre-check)
         run: |
           echo "Scanning .mcfunction files..."
@@ -48,7 +45,12 @@ jobs:
           fi
           echo "Pre-check passed."
 
-      # 4. Validate pack.mcmeta
+      - name: Validate mcfunction syntax (mecha)
+        uses: mcbeet/check-commands@v1
+        with:
+          source: .
+          minecraft: "1.21.4"   # hedef sürümü buraya yaz
+
       - name: Validate pack.mcmeta
         run: |
           if [ ! -f pack.mcmeta ]; then

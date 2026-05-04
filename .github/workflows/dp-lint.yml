@@ -1,0 +1,65 @@
+name: Datapack CI
+on:
+  push:
+  pull_request:
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Validate JSON
+        run: |
+          echo "Checking JSON..."
+          sudo apt-get update
+          sudo apt-get install -y jq
+          find . -name "*.json" -print0 | xargs -0 -n1 jq empty
+
+      - name: Lint mcfunction files (pre-check)
+        run: |
+          echo "Scanning .mcfunction files..."
+          FILES=$(find . -name "*.mcfunction" -not -path "./.git/*")
+          if [ -z "$FILES" ]; then
+            echo "No .mcfunction files found."
+            exit 0
+          fi
+          ERRORS=0
+          while IFS= read -r file; do
+            # BOM kontrolü (UTF-8 BOM: EF BB BF)
+            if head -c 3 "$file" | grep -qP '^\xef\xbb\xbf'; then
+              echo "BOM detected: $file"
+              ERRORS=$((ERRORS + 1))
+            fi
+            # Null byte kontrolü
+            if grep -Pql '\x00' "$file"; then
+              echo "Null byte detected: $file"
+              ERRORS=$((ERRORS + 1))
+            fi
+            # Satır sonu kontrolü (CRLF — Minecraft bunu işlemez)
+            if file "$file" | grep -q "CRLF"; then
+              echo "CRLF line endings: $file"
+              ERRORS=$((ERRORS + 1))
+            fi
+          done <<< "$FILES"
+          if [ "$ERRORS" -gt 0 ]; then
+            echo "$ERRORS issue(s) found in .mcfunction files."
+            exit 1
+          fi
+          echo "Pre-check passed."
+
+      - name: Download Spyglass
+        run: |
+          curl -L https://github.com/SpyglassMC/spyglass/releases/download/v0.4.0/spyglass-linux -o spyglass
+          chmod +x spyglass
+
+      - name: Run Spyglass lint (JSON + mcfunction)
+        run: |
+          ./spyglass lint
+
+      - name: Validate pack.mcmeta
+        run: |
+          if [ ! -f pack.mcmeta ]; then
+            echo "pack.mcmeta is missing!"
+            exit 1
+          fi

@@ -50,12 +50,11 @@ jobs:
 
       - name: Download Spyglass
         run: |
-          curl -L https://github.com/SpyglassMC/spyglass/releases/download/v0.4.0/spyglass-linux -o spyglass
-          chmod +x spyglass
+          npm install -g @spyglassmc/language-server
 
       - name: Run Spyglass lint (JSON + mcfunction)
         run: |
-          ./spyglass lint
+          spyglass lint
 
       - name: Validate pack.mcmeta
         run: |

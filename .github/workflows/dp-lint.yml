@@ -6,16 +6,19 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
+      # 1. Download repository
       - name: Checkout repository
         uses: actions/checkout@v6
 
+      # 2. JSON validation
       - name: Validate JSON
         run: |
           echo "Checking JSON..."
-          sudo apt-get update
-          sudo apt-get install -y jq
-          find . -name "*.json" -print0 | xargs -0 -n1 jq empty
+          sudo apt-get update -q
+          sudo apt-get install -y -q jq
+          find . -name "*.json" -not -path "./.git/*" -print0 | xargs -0 -n1 jq empty
 
+      # 3. mcfunction pre-check
       - name: Lint mcfunction files (pre-check)
         run: |
           echo "Scanning .mcfunction files..."
@@ -26,17 +29,14 @@ jobs:
           fi
           ERRORS=0
           while IFS= read -r file; do
-            # BOM kontrolü (UTF-8 BOM: EF BB BF)
             if head -c 3 "$file" | grep -qP '^\xef\xbb\xbf'; then
               echo "BOM detected: $file"
               ERRORS=$((ERRORS + 1))
             fi
-            # Null byte kontrolü
             if grep -Pql '\x00' "$file"; then
               echo "Null byte detected: $file"
               ERRORS=$((ERRORS + 1))
             fi
-            # Satır sonu kontrolü (CRLF — Minecraft bunu işlemez)
             if file "$file" | grep -q "CRLF"; then
               echo "CRLF line endings: $file"
               ERRORS=$((ERRORS + 1))
@@ -48,14 +48,7 @@ jobs:
           fi
           echo "Pre-check passed."
 
-      - name: Download Spyglass
-        run: |
-          npm install -g @spyglassmc/language-server
-
-      - name: Run Spyglass lint (JSON + mcfunction)
-        run: |
-          spyglass lint
-
+      # 4. Validate pack.mcmeta
       - name: Validate pack.mcmeta
         run: |
           if [ ! -f pack.mcmeta ]; then

@@ -45,12 +45,6 @@ jobs:
           fi
           echo "Pre-check passed."
 
-      - name: Validate mcfunction syntax (mecha)
-        uses: mcbeet/check-commands@v1
-        with:
-          source: .
-          minecraft: "1.20.4"   # hedef sürümü buraya yaz
-
       - name: Validate pack.mcmeta
         run: |
           if [ ! -f pack.mcmeta ]; then

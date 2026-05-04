@@ -1,4 +1,4 @@
-name: Datapack Lint
+name: Datapack CI
 on:
   push:
   pull_request:
@@ -44,6 +44,13 @@ jobs:
             exit 1
           fi
           echo "Pre-check passed."
+
+      - name: Install mecha (latest from git)
+        run: pip install git+https://github.com/mcbeet/mecha.git --break-system-packages
+
+      - name: Validate mcfunction syntax (mecha)
+        run: mecha .
+        # --minecraft verilmiyor: pack.mcmeta'daki pack_format'tan otomatik algılar
 
       - name: Validate pack.mcmeta
         run: |
